@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>lab4_5</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\img\Logo(2).ico</ApplicationIcon>
+    <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="fonts\**" />
+    <Compile Remove="img\**" />
+    <EmbeddedResource Remove="fonts\**" />
+    <EmbeddedResource Remove="img\**" />
+    <None Remove="fonts\**" />
+    <None Remove="img\**" />
+    <Page Remove="fonts\**" />
+    <Page Remove="img\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="background.jpg" />
+    <None Remove="img1.png" />
+    <None Remove="Resources\img\background.jpg" />
+    <None Remove="Resources\img\background.png" />
+    <None Remove="Resources\img\cursor.cur" />
+    <None Remove="Resources\img\electric-train.png" />
+    <None Remove="Resources\img\Logo%281%29.ico" />
+    <None Remove="Resources\img\Logo%282%29.ico" />
+    <None Remove="Resources\img\Logo.ico" />
+    <None Remove="Resources\img\Logo.png" />
+    <None Remove="Resources\img\train.png" />
+    <None Remove="Resources\img\translate.png" />
+    <None Remove="Resources\img\_arrow.cur" />
+    <None Remove="Resources\Json\ways.json" />
+    <None Remove="station.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\img\Logo(2).ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="3.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\img\background.png" />
+    <Resource Include="Resources\img\cursor.cur" />
+    <Resource Include="Resources\img\electric-train.png" />
+    <Resource Include="Resources\img\Logo(2).ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\img\train.png" />
+    <Resource Include="Resources\img\translate.png" />
+    <Resource Include="Resources\img\_arrow.cur" />
+    <Resource Include="Resources\Json\ways.json" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="lab4_5.ChangeTicket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab4_5" xmlns:xctk="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Cursor="{StaticResource customCursor}"
+        Title="Информация о билете" Height="450" Width="800" Background="#FFF4CF">
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="34*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <TextBox x:Name="ChangeNameWay" Text="{Binding Path=SelectedTicket.NameWay}" Margin="5" FontSize="28"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBox x:Name="ChangeNumberTrain" Text="{Binding Path=SelectedTicket.NumberTrain}" Margin="5" FontSize="20"/>
+            <TextBox x:Name="ChangePrice" Text="{Binding Path=SelectedTicket.Price}" Margin="5" FontSize="20"/>
+            <TextBox x:Name="TicketTimePicker" Text="{Binding Path=SelectedTicket.Time}" Margin="5" FontSize="20"/>
+            <StackPanel>
+                <RadioButton x:Name="Train" Content="Поезд" IsChecked="True" Margin="5"/>
+                <RadioButton x:Name="Electric" Content="Электричка" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <TextBox x:Name="ChangeDescription" Text="{Binding Path=SelectedTicket.Description}" FontSize="20" TextWrapping="Wrap" Width="783"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="3">
+            <Button x:Name="ButtonChange" Width="50" Content="&#128190;" Margin="5" Command="{Binding ChangeCommand}" Click="SaveChange_Click"/>
+            <Button x:Name="ButtonDelete" Width="50" Content="&#128465;" Margin="5" Command="{Binding DeleteCommand}" Click="Delete_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

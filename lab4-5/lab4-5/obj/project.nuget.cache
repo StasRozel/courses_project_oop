@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "o/QRxpKc9BGQOJssaQbSSDlesBGpJdEaT8CUMxwhISoKBZGyOK4RVO+8SwxEk4yGHIxm6PRzSaQNUJemeoePfg==",
+  "success": true,
+  "projectFilePath": "E:\\Univer\\2_course\\ООП\\2сем\\lab4-5\\lab4-5\\lab4-5.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rozel\\.nuget\\packages\\extended.wpf.toolkit\\4.6.0\\extended.wpf.toolkit.4.6.0.nupkg.sha512",
+    "C:\\Users\\rozel\\.nuget\\packages\\materialdesigncolors\\1.2.7\\materialdesigncolors.1.2.7.nupkg.sha512",
+    "C:\\Users\\rozel\\.nuget\\packages\\materialdesignthemes\\3.2.0\\materialdesignthemes.3.2.0.nupkg.sha512",
+    "C:\\Users\\rozel\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
