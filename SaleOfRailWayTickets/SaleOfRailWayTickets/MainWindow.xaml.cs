@@ -1,4 +1,6 @@
 ﻿
+using lab4_5.Classes;
+using Microsoft.Data.SqlClient;
 using System.Globalization;
 using System.Text;
 using System.Windows;
@@ -52,17 +54,17 @@ namespace lab4_5
             //Отмечаем нужный пункт смены языка как выбранный язык
             foreach (MenuItem i in MenuLanguage.Items)
             {
-                CultureInfo ci = i.Tag as CultureInfo;
+                CultureInfo? ci = i.Tag as CultureInfo;
                 i.IsChecked = ci != null && ci.Equals(currLang);
             }
         }
 
         private void ChangeLanguageClick(Object sender, EventArgs e)
         {
-            MenuItem mi = sender as MenuItem;
+            MenuItem? mi = sender as MenuItem;
             if (mi != null)
             {
-                CultureInfo lang = mi.Tag as CultureInfo;
+                CultureInfo? lang = mi.Tag as CultureInfo;
                 if (lang != null)
                 {
                     App.Language = lang;
@@ -77,6 +79,15 @@ namespace lab4_5
         {
             AddTicket addTicket = new AddTicket();
             addTicket.Show();
+        }
+
+        private void FilterByTime_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key.ToString() == "Return")
+            {
+                ViewModel.FilterTicketsByTime.Execute(FilterByTime);
+                MessageBox.Show("Click");
+            }
         }
     }
 }

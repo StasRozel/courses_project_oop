@@ -21,6 +21,12 @@
     <Page Update="Resources\Lang\lang.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resources\Theme\PurpurTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Theme\SkyTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddTicket.xaml">
       <SubType>Designer</SubType>
     </Page>

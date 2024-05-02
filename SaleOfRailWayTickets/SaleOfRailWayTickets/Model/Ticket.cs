@@ -13,7 +13,7 @@ namespace lab4_5
         private int id;
         private string nameWay;
         private TimeSpan time;
-        private int price;
+        private double price;
         private int numberTrain;
         private string description;
         private string img;
@@ -49,7 +49,7 @@ namespace lab4_5
             }
         }
 
-        public int Price
+        public double Price
         {
             get { return price; }
             set

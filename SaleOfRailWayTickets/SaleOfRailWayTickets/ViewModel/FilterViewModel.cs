@@ -14,6 +14,7 @@ namespace lab4_5
 {
     public partial class TicketsViewModel
     {
+
         private int countSortByPrice = 0;
         private int countSortByAlpfabet = 0;
 
@@ -69,9 +70,9 @@ namespace lab4_5
             countSortByAlpfabet++;
 
             if (countSortByAlpfabet % 2 == 1)
-                tickets = new List<Ticket>(Tickets?.OrderBy(ticket => ticket.NameWay));
+                tickets = new List<Ticket>(Tickets.OrderBy(ticket => ticket.NameWay));
             else
-                tickets = new List<Ticket>(Tickets?.OrderByDescending(ticket => ticket.NameWay));
+                tickets = new List<Ticket>(Tickets.OrderByDescending(ticket => ticket.NameWay));
 
             Tickets.Clear();
 
@@ -92,20 +93,20 @@ namespace lab4_5
 
         private void Search(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(JSONControl.Load(Directory.GetCurrentDirectory() + "../../../../Resources/Json/ways.json"));
+            List<Ticket> tickets = new List<Ticket>(DataManager.GetDataTable("Tickets"));
 
-            TextBox searchElement = parameter as TextBox;
+            TextBox? searchElement = parameter as TextBox;
 
-            if (searchElement.Text != "")
+            if (searchElement?.Text != "")
             {
                 tickets = tickets.Where(t => Regex.IsMatch(t.NameWay, searchElement.Text)).ToList();
             }
 
-            Tickets.Clear();
+            Tickets?.Clear();
 
             foreach (Ticket ticket in tickets)
             {
-                Tickets.Add(ticket);
+                Tickets?.Add(ticket);
             }
         }
 
@@ -120,10 +121,10 @@ namespace lab4_5
 
         private void FilterByTime(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(JSONControl.Load(Directory.GetCurrentDirectory() + "../../../../Resources/Json/ways.json"));
-            TextBox filterElement = parameter as TextBox;
+            List<Ticket> tickets = new List<Ticket>(DataManager.GetDataTable("Tickets"));
+            TextBox? filterElement = parameter as TextBox;
 
-            if (filterElement.Text != "")
+            if (filterElement?.Text != "")
             {
                 string[] times = filterElement.Text.Split('-');
                 TimeSpan startTime = TimeSpan.Parse(times[0]);
@@ -132,11 +133,11 @@ namespace lab4_5
                 tickets = tickets.Where(t => t.Time >= startTime && t.Time <= endTime).ToList();
             }
 
-            Tickets.Clear();
+            Tickets?.Clear();
 
             foreach (Ticket ticket in tickets)
             {
-                Tickets.Add(ticket);
+                Tickets?.Add(ticket);
             }
         }
 
@@ -157,7 +158,7 @@ namespace lab4_5
 
             if (filterElement?.IsChecked == true)
             {
-                tickets = new List<Ticket>(JSONControl.Load(Directory.GetCurrentDirectory() + "../../../../Resources/Json/ways.json"));
+                tickets = new List<Ticket>(DataManager.GetDataTable("Tickets"));
             }
 
             Tickets?.Clear();
@@ -179,7 +180,7 @@ namespace lab4_5
 
         private void DisplayTrain(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(JSONControl.Load(Directory.GetCurrentDirectory() + "../../../../Resources/Json/ways.json"));
+            List<Ticket> tickets = new List<Ticket>(Tickets);
             RadioButton filterElement = parameter as RadioButton;
 
             if (filterElement?.IsChecked == true)
@@ -206,7 +207,7 @@ namespace lab4_5
 
         private void DisplayElectric(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(JSONControl.Load(Directory.GetCurrentDirectory() + "../../../../Resources/Json/ways.json"));
+            List<Ticket> tickets = new List<Ticket>(Tickets);
             RadioButton filterElement = parameter as RadioButton;
 
             if (filterElement?.IsChecked == true)

@@ -99,18 +99,15 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="130*"></ColumnDefinition>
                         <ColumnDefinition Width="300*"></ColumnDefinition>
-                        <ColumnDefinition Width="40*"></ColumnDefinition>
                         <ColumnDefinition Width="100*"></ColumnDefinition>
                         <ColumnDefinition Width="100*"></ColumnDefinition>
                         <ColumnDefinition Width="100*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="FilterByTime" Text="{DynamicResource m_HeaderMenuFilterTime}" Grid.Column="1" FontSize="14" Margin="5" />
+                    <TextBox x:Name="FilterByTime" Text="{DynamicResource m_HeaderMenuFilterTime}" Grid.Column="1" FontSize="14" Margin="5" KeyDown="FilterByTime_KeyDown"/>
 
-                    <Button Content="Ф" Grid.Column="2" Command="{Binding FilterTicketsByTime}" CommandParameter="{Binding ElementName=FilterByTime}"/>
-
-                    <RadioButton x:Name="All" Content="{DynamicResource m_HeaderMenuFilterTypeAll}" Grid.Column="3" IsChecked="True" Command="{Binding DisplayTicketsAll}" CommandParameter="{Binding ElementName=All}"/>
-                    <RadioButton x:Name="Train" Content="{DynamicResource m_HeaderMenuFilterTrain}" Grid.Column="4" Command="{Binding DisplayTicketsTrain}" CommandParameter="{Binding ElementName=Train}"/>
-                    <RadioButton x:Name="Electric" Content="{DynamicResource m_HeaderMenuFilterElectric}" Grid.Column="5" Command="{Binding DisplayTicketsElectric}" CommandParameter="{Binding ElementName=Electric}"/>
+                    <RadioButton x:Name="All" Content="{DynamicResource m_HeaderMenuFilterTypeAll}" Grid.Column="2" IsChecked="True" Command="{Binding DisplayTicketsAll}" CommandParameter="{Binding ElementName=All}"/>
+                    <RadioButton x:Name="Train" Content="{DynamicResource m_HeaderMenuFilterTrain}" Grid.Column="3" Command="{Binding DisplayTicketsTrain}" CommandParameter="{Binding ElementName=Train}"/>
+                    <RadioButton x:Name="Electric" Content="{DynamicResource m_HeaderMenuFilterElectric}" Grid.Column="4" Command="{Binding DisplayTicketsElectric}" CommandParameter="{Binding ElementName=Electric}"/>
                 </Grid>
 
                 <Grid Grid.Row="0" Grid.Column="1">

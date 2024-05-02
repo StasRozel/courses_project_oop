@@ -53,14 +53,14 @@ namespace lab4_5
                 NameWay = ticketNameArr[0],
                 Description = ticketNameArr[1],
                 NumberTrain = Convert.ToInt32(ticketNameArr[2]),
-                Price = Convert.ToInt32(ticketNameArr[3]),
+                Price = Convert.ToDouble(ticketNameArr[3]),
                 Time = TimeSpan.Parse(ticketNameArr[4]),
                 Img = Convert.ToBoolean(ticketNameArr[5]) ? pathTrain : pathElectric,
                 Type = Convert.ToBoolean(ticketNameArr[5]) ? "train" : "electric"
             };
             Tickets.Add(newTicket);
 
-            JSONControl.Save(Directory.GetCurrentDirectory() + "../../../../Resources/Json/ways.json", newTicket);
+            DataManager.AddTicketToTable(newTicket);
         }
 
         public TicketCommand ChangeCommand
@@ -74,7 +74,7 @@ namespace lab4_5
 
         private void ChangeTicketCommand(object parameter)
         {
-            string ticketName = parameter as string;
+            string? ticketName = parameter as string;
             string[] ticketNameArr = ticketName.Split(',');
             string pathTrain = "Resources/img/train.png";
             string pathElectric = "Resources/img/electric-train.png";
@@ -85,14 +85,14 @@ namespace lab4_5
                 NameWay = ticketNameArr[1],
                 Description = ticketNameArr[2],
                 NumberTrain = Convert.ToInt32(ticketNameArr[3]),
-                Price = Convert.ToInt32(ticketNameArr[4]),
+                Price = Convert.ToDouble(ticketNameArr[4]),
                 Time = TimeSpan.Parse(ticketNameArr[5]),
                 Img = Convert.ToBoolean(ticketNameArr[6]) ? pathTrain : pathElectric,
                 Type = Convert.ToBoolean(ticketNameArr[6]) ? "train" : "electric"
             };
             Tickets[SelectedTicket.Id - 1] = newTicket;
 
-            JSONControl.ChangeTicket(Directory.GetCurrentDirectory() + "../../../../Resources/Json/ways.json", newTicket);
+            DataManager.ChangeTicketToTable(newTicket);
 
         }
 
@@ -109,9 +109,9 @@ namespace lab4_5
         {
             int id = (int)parameter;
 
-            Tickets.RemoveAt(id-1);
+            Tickets?.RemoveAt(id-1);
 
-            JSONControl.DeleteTicket(Directory.GetCurrentDirectory() + "../../../../Resources/Json/ways.json", id);
+            DataManager.DeleteTicketToTable(id);
         }
 
         public Ticket SelectedTicket
@@ -123,15 +123,23 @@ namespace lab4_5
                 if (SelectedTicket != null)
                 {
                     ChangeTicket changeTicket = new ChangeTicket();
+                    changeTicket.Closed += ChangeTicket_Closed;
                     changeTicket.Show();
                 }
                 OnPropertyChanged("SelectedTicket");
             }
         }
 
+
+        private void ChangeTicket_Closed(object sender, EventArgs e)
+        {
+            SelectedTicket = null;
+        }
+
         public TicketsViewModel()
         {
-            Tickets = JSONControl.Load(Directory.GetCurrentDirectory() + "../../../../Resources/Json/ways.json");
+            DBConnector.Connect();
+            Tickets = new ObservableCollection<Ticket>(DataManager.GetDataTable("Tickets"));
         }
 
 

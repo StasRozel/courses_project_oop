@@ -128,7 +128,7 @@ namespace lab4_5 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/lab4-5;component/view/infoticket.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SaleOfRailWayTickets;V1.0.0.0;component/view/infoticket.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\InfoTicket.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
