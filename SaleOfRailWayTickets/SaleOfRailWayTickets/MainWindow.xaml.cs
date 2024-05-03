@@ -1,7 +1,9 @@
 ﻿
 using lab4_5.Classes;
 using Microsoft.Data.SqlClient;
+using System;
 using System.Globalization;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -73,7 +75,10 @@ namespace lab4_5
 
         }
 
-
+        private void ThemeChange_Click(object sender, RoutedEventArgs e)
+        {
+            App.ThemeChange();
+        }
 
         private void Open_Click(object sender, RoutedEventArgs e)
         {

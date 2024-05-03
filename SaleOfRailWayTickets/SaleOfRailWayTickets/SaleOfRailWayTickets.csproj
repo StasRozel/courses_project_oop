@@ -33,6 +33,7 @@
     <None Remove="Resources\img\Logo%282%29.ico" />
     <None Remove="Resources\img\Logo.ico" />
     <None Remove="Resources\img\Logo.png" />
+    <None Remove="Resources\img\themes.png" />
     <None Remove="Resources\img\train.png" />
     <None Remove="Resources\img\translate.png" />
     <None Remove="Resources\img\_arrow.cur" />
@@ -58,6 +59,7 @@
     <Resource Include="Resources\img\Logo(2).ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\img\themes.png" />
     <Resource Include="Resources\img\train.png" />
     <Resource Include="Resources\img\translate.png" />
     <Resource Include="Resources\img\_arrow.cur" />

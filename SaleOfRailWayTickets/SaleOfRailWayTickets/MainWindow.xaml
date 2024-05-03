@@ -30,18 +30,6 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-
-        <Style TargetType="TextBox" x:Key="CustomTextBox">
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="Background" Value="#9195F6"/>
-            <Setter Property="BorderBrush" Value="#FF4876FF"/>
-            <Setter Property="BorderThickness" Value="2" />
-            <Setter Property="Padding" Value="8,6"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="24"/>
-
-
-        </Style>
     </Window.Resources>
 
     <Grid x:Name="main">
@@ -69,12 +57,16 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Rectangle Fill="#9195F6" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" />
+                <Rectangle Style="{DynamicResource ColorRectangle}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" />
 
                 <Button Content="{DynamicResource m_HeaderMenuAddTicket}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Open_Click"/>
                 <Button Content="{DynamicResource m_HeaderMenuViewBuyTicket}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button Content="{DynamicResource m_HeaderMenuButton}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Button Content="{DynamicResource m_HeaderMenuButton}" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button x:Name="ChangeTheme" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ThemeChange_Click">
+                    <StackPanel Orientation="Horizontal" Cursor="">
+                        <Image Source="/Resources/img/themes.png" Width="18" Height="20" />
+                    </StackPanel>
+                </Button>
 
 
                 <Menu DockPanel.Dock="Top" Background="Orange" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -93,7 +85,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Rectangle Fill="#9195F6" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" />
+                <Rectangle Style="{DynamicResource ColorRectangle}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" />
 
                 <Grid Grid.Row="0" Grid.Column="0">
                     <Grid.ColumnDefinitions>
@@ -127,11 +119,7 @@
                     <ColumnDefinition Width="70*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <xctk:WatermarkTextBox x:Name="SearchTextbox" Watermark="{DynamicResource m_TextBoxSeatch}"  Grid.Column="0" Style="{StaticResource CustomTextBox}" Grid.ColumnSpan="1" >
-                    <xctk:WatermarkTextBox.Background>
-                        <SolidColorBrush Color="#FF9195F6" Opacity="0.7"/>
-                    </xctk:WatermarkTextBox.Background>
-                </xctk:WatermarkTextBox>
+                <xctk:WatermarkTextBox x:Name="SearchTextbox" Watermark="{DynamicResource m_TextBoxSeatch}"  Grid.Column="0" Style="{DynamicResource CustomTextBox}" Grid.ColumnSpan="1" />
                 <Button  Height="45" Content="{DynamicResource m_ButtonSearch}" Grid.Column="1" Command="{Binding SearchTicket}" CommandParameter="{Binding ElementName=SearchTextbox}"/>
             </Grid>
 
@@ -151,11 +139,7 @@
                     <ColumnDefinition Width="70"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Rectangle Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8">
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="#FF9195F6" Opacity="0.7"/>
-                    </Rectangle.Fill>
-                </Rectangle>
+                <Rectangle Style="{DynamicResource ColorTable}" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8" />
                 <TextBlock Text="{DynamicResource m_TitleTableId}" FontSize="18"
                             Grid.Column="0" Grid.Row="0" TextWrapping="Wrap"
                             Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
@@ -181,8 +165,8 @@
                            Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8" ItemsSource="{Binding Tickets}"
- SelectedItem="{Binding SelectedTicket}">
+                <ListBox Grid.Column="0" Grid.ColumnSpan="6" ItemsSource="{Binding Tickets}"
+ SelectedItem="{Binding SelectedTicket}" Grid.Row="1"  Grid.RowSpan="2">
 
                     <ListBox.ItemTemplate>
                         <DataTemplate>

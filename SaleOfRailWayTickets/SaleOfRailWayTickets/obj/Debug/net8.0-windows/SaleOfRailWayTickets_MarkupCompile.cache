@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\App.xaml
-5947017238
+71626699022
 11759336729
 15-463288472
 233185562504
-MainWindow.xaml;Resources\Lang\lang.en-US.xaml;Resources\Lang\lang.xaml;View\AddTicket.xaml;View\InfoTicket.xaml;
+MainWindow.xaml;Resources\Lang\lang.en-US.xaml;Resources\Lang\lang.xaml;Resources\Theme\PurpurTheme.xaml;Resources\Theme\SkyTheme.xaml;View\AddTicket.xaml;View\InfoTicket.xaml;
 
 False
 

@@ -1,6 +1,7 @@
 ﻿    using System.Configuration;
 using System.Data;
 using System.Globalization;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
@@ -11,7 +12,7 @@ namespace lab4_5
     /// </summary>
     public partial class App : Application
     {
-       
+        static int countClick = 0;
 
         private static List<CultureInfo> m_Languages = new List<CultureInfo>();
 
@@ -35,7 +36,52 @@ namespace lab4_5
             Language = lab4_5.Properties.Settings.Default.DefaultLanguage;
         }
 
-        //Евент для оповещения всех окон приложения
+        private static void DeleteOldResources(ResourceDictionary newDict, string uri)
+        {
+            ResourceDictionary oldDict = (from d in Application.Current.Resources.MergedDictionaries
+                                          where d.Source != null && d.Source.OriginalString.StartsWith(uri)
+                                          select d).First();
+            if (oldDict != null)
+            {
+                int ind = Application.Current.Resources.MergedDictionaries.IndexOf(oldDict);
+                Application.Current.Resources.MergedDictionaries.Remove(oldDict);
+                Application.Current.Resources.MergedDictionaries.Insert(ind, newDict);
+            }
+            else
+            {
+                Application.Current.Resources.MergedDictionaries.Add(newDict);
+            }
+        }
+
+        public static void ThemeChange()
+        {
+            string uriPurpurTheme = "Resources/Theme/PurpurTheme.xaml";
+            string uriSkyTheme = "Resources/Theme/SkyTheme.xaml";
+
+            string uriOrangeColorMIU = "pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Orange.xaml";
+            string uriIndigoColorMIU = "pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Indigo.xaml";
+
+            ResourceDictionary dict = new ResourceDictionary();
+            ResourceDictionary dictMIU = new ResourceDictionary();
+
+            if (countClick % 2 == 0)
+            {
+                dict.Source = new Uri(uriSkyTheme, UriKind.Relative);
+                dictMIU.Source = new Uri(uriIndigoColorMIU, UriKind.Absolute);
+            }
+            else
+            {
+                dict.Source = new Uri(uriPurpurTheme, UriKind.Relative);
+                dictMIU.Source = new Uri(uriOrangeColorMIU, UriKind.Absolute);
+            }
+
+            App.DeleteOldResources(dict, "Resources/Theme/");
+
+            App.DeleteOldResources(dictMIU, "pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.");
+
+            countClick++;
+        }
+
         public static event EventHandler LanguageChanged;
 
         public static CultureInfo Language {
@@ -48,36 +94,20 @@ namespace lab4_5
                 if(value==null) throw new ArgumentNullException("value");
                 if(value==System.Threading.Thread.CurrentThread.CurrentUICulture) return;
 
-                //1. Меняем язык приложения:
                 System.Threading.Thread.CurrentThread.CurrentUICulture = value;
 
-                //2. Создаём ResourceDictionary для новой культуры
                 ResourceDictionary dict = new ResourceDictionary();
                 switch(value.Name){
                     case "en-US": 
-                        dict.Source = new Uri(String.Format("Resources/Lang/lang.{0}.xaml", value.Name), UriKind.Relative);
+                        dict.Source = new Uri($"Resources/Lang/lang.{value.Name}.xaml", UriKind.Relative);
                         break;
                     default:
                         dict.Source = new Uri("Resources/Lang/lang.xaml", UriKind.Relative);
                         break;
                 }
 
-                //3. Находим старую ResourceDictionary и удаляем его и добавляем новую ResourceDictionary
-                ResourceDictionary oldDict = (from d in Application.Current.Resources.MergedDictionaries
-                                              where d.Source != null && d.Source.OriginalString.StartsWith("Resources/Lang/lang.")
-                                              select d).First();
-                if (oldDict != null)
-                {
-                    int ind = Application.Current.Resources.MergedDictionaries.IndexOf(oldDict);
-                    Application.Current.Resources.MergedDictionaries.Remove(oldDict);
-                    Application.Current.Resources.MergedDictionaries.Insert(ind, dict);
-                } 
-                else
-                {
-                    Application.Current.Resources.MergedDictionaries.Add(dict);
-                }
-
-                //4. Вызываем евент для оповещения всех окон.
+                App.DeleteOldResources(dict, "Resources/Lang/lang.");
+               
                 LanguageChanged(Application.Current, new EventArgs());
             }
         }

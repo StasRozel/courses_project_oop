@@ -73,6 +73,8 @@ E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\SaleOfRailWayTickets.csproj.AssemblyReference.cache
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Resources\Lang\lang.en-US.baml
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Resources\Lang\lang.baml
+E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Resources\Theme\PurpurTheme.baml
+E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Resources\Theme\SkyTheme.baml
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\MainWindow.g.cs
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\View\AddTicket.g.cs
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\View\InfoTicket.g.cs
