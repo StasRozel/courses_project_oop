@@ -15,63 +15,31 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Collections.ObjectModel;
+
 namespace lab4_5
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public static TicketsViewModel ViewModel { get; set; }
-        private int countClick = 0;
-
+        public UndoRedoManager _UndoRedoManager { get; set; }
+        
         public MainWindow()
         {
             InitializeComponent();
 
             DataContext = new TicketsViewModel();
             ViewModel = (TicketsViewModel)DataContext;
+            var lstNames = new List<string>() { "Harry", "Brandin" };
+            _UndoRedoManager = new UndoRedoManager(new ObservableCollection<string>(lstNames));
+            //App.LanguageChanged += LanguageChanged;
 
-            App.LanguageChanged += LanguageChanged;
-
-            CultureInfo currLang = App.Language;
-
-            //Заполняем меню смены языка:
-            MenuLanguage.Items.Clear();
-            foreach (var lang in App.Languages)
-            {
-                MenuItem menuLang = new MenuItem();
-                menuLang.Header = lang.DisplayName;
-                menuLang.Tag = lang;
-                menuLang.IsChecked = lang.Equals(currLang);
-                menuLang.Click += ChangeLanguageClick;
-                MenuLanguage.Items.Add(menuLang);
-            }
+            MessageBox.Show(_UndoRedoManager.ToString());
         }
 
-        private void LanguageChanged(Object sender, EventArgs e)
+        private void LanguageChange_Click(Object sender, RoutedEventArgs e)
         {
-            CultureInfo currLang = App.Language;
-
-            //Отмечаем нужный пункт смены языка как выбранный язык
-            foreach (MenuItem i in MenuLanguage.Items)
-            {
-                CultureInfo? ci = i.Tag as CultureInfo;
-                i.IsChecked = ci != null && ci.Equals(currLang);
-            }
-        }
-
-        private void ChangeLanguageClick(Object sender, EventArgs e)
-        {
-            MenuItem? mi = sender as MenuItem;
-            if (mi != null)
-            {
-                CultureInfo? lang = mi.Tag as CultureInfo;
-                if (lang != null)
-                {
-                    App.Language = lang;
-                }
-            }
+            App.LanguageChange(lab4_5.Properties.Settings.Default.DefaultLanguage);
 
         }
 

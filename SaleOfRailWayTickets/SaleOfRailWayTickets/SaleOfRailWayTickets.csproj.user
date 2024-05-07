@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Resources\UserControl\HeaderTableTickets.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AddTicket.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -15,6 +18,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Resources\UserControl\HeaderTableTickets.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\Lang\lang.en-US.xaml">
       <SubType>Designer</SubType>
     </Page>

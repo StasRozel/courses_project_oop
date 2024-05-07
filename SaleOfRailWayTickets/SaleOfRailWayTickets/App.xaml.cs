@@ -1,4 +1,4 @@
-﻿    using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
 using System.Globalization;
 using System.IO;
@@ -12,28 +12,13 @@ namespace lab4_5
     /// </summary>
     public partial class App : Application
     {
-        static int countClick = 0;
-
-        private static List<CultureInfo> m_Languages = new List<CultureInfo>();
-
-        public static List<CultureInfo> Languages 
-        {
-            get 
-            {
-                return m_Languages;
-            }
-        }
+        static int countClickTheme = 0;
+        static int countClickLang = 0;
 
         public App()
         {
             InitializeComponent();
-            App.LanguageChanged += App_LanguageChanged;
-
-            m_Languages.Clear();
-            m_Languages.Add(new CultureInfo("en-US")); 
-            m_Languages.Add(new CultureInfo("ru-RU"));
-
-            Language = lab4_5.Properties.Settings.Default.DefaultLanguage;
+            //App.LanguageChanged += App_LanguageChanged;
         }
 
         private static void DeleteOldResources(ResourceDictionary newDict, string uri)
@@ -64,7 +49,7 @@ namespace lab4_5
             ResourceDictionary dict = new ResourceDictionary();
             ResourceDictionary dictMIU = new ResourceDictionary();
 
-            if (countClick % 2 == 0)
+            if (countClickTheme % 2 == 0)
             {
                 dict.Source = new Uri(uriSkyTheme, UriKind.Relative);
                 dictMIU.Source = new Uri(uriIndigoColorMIU, UriKind.Absolute);
@@ -79,44 +64,41 @@ namespace lab4_5
 
             App.DeleteOldResources(dictMIU, "pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.");
 
-            countClick++;
+            countClickTheme++;
         }
 
         public static event EventHandler LanguageChanged;
 
-        public static CultureInfo Language {
-            get 
-            {
-                return System.Threading.Thread.CurrentThread.CurrentUICulture; 
-            }
-            set
-            {
-                if(value==null) throw new ArgumentNullException("value");
-                if(value==System.Threading.Thread.CurrentThread.CurrentUICulture) return;
-
-                System.Threading.Thread.CurrentThread.CurrentUICulture = value;
-
-                ResourceDictionary dict = new ResourceDictionary();
-                switch(value.Name){
-                    case "en-US": 
-                        dict.Source = new Uri($"Resources/Lang/lang.{value.Name}.xaml", UriKind.Relative);
-                        break;
-                    default:
-                        dict.Source = new Uri("Resources/Lang/lang.xaml", UriKind.Relative);
-                        break;
-                }
-
-                App.DeleteOldResources(dict, "Resources/Lang/lang.");
-               
-                LanguageChanged(Application.Current, new EventArgs());
-            }
-        }
-
-        private void App_LanguageChanged(Object sender, EventArgs e)
+        public static void LanguageChange(CultureInfo value)
         {
-            lab4_5.Properties.Settings.Default.DefaultLanguage = Language;
-            lab4_5.Properties.Settings.Default.Save();
+            //if (value == null) throw new ArgumentNullException("value");
+            //if (value == System.Threading.Thread.CurrentThread.CurrentUICulture) return;
+
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = value;
+
+            ResourceDictionary dict = new ResourceDictionary();
+
+            if (countClickLang % 2 == 0)
+            {
+                dict.Source = new Uri($"Resources/Lang/lang.en-US.xaml", UriKind.Relative);
+            }
+            else
+            {
+                dict.Source = new Uri("Resources/Lang/lang.xaml", UriKind.Relative);
+            }
+
+            App.DeleteOldResources(dict, "Resources/Lang/lang.");
+
+            //LanguageChanged(Application.Current, new EventArgs());
+
+            countClickLang++;
         }
+
+        //private void App_LanguageChanged(Object sender, EventArgs e)
+        //{
+        //    lab4_5.Properties.Settings.Default.DefaultLanguage = Language;
+        //    lab4_5.Properties.Settings.Default.Save();
+        //}
     }
 
 }

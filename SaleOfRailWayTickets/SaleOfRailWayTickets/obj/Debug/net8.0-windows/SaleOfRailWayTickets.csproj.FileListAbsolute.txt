@@ -100,3 +100,7 @@ E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\SaleOfRailWayTickets.pdb
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\SaleOfRailWayTickets.genruntimeconfig.cache
 E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\ref\SaleOfRailWayTickets.dll
+E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Resources\UserControl\HeaderTableTickets.g.cs
+E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Resources\UserControl\HeaderTableTickets.baml
+E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\DefaultUnDo.dll

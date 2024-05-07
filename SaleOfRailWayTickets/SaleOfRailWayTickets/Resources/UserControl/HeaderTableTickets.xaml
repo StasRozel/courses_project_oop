@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="lab4_5.HeaderTableTickets"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:lab4_5"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!--<ControlTemplate TargetType="local:HeaderTableTickets">-->
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{DynamicResource m_TitleTableId}" FontSize="18"
+           Grid.Column="0" Grid.Row="0" TextWrapping="Wrap"
+           Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{DynamicResource m_TitleTableNameWay}" FontSize="18"
+           Grid.Column="1" Grid.Row="0" TextWrapping="Wrap"
+           Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{DynamicResource m_TitleTableTime}" FontSize="18"
+           Grid.Column="2" Grid.Row="0" TextWrapping="Wrap"
+           Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{DynamicResource m_TitleTablePrice}" FontSize="18"
+           Grid.Column="3" Grid.Row="0" TextWrapping="Wrap"
+           Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{DynamicResource m_TitleTableNumberTrain}" FontSize="18"
+           Grid.Column="4" Grid.Row="0" TextWrapping="Wrap"
+           Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{DynamicResource m_TitleTableType}" FontSize="18"
+           Grid.Column="5" Grid.Row="0" TextWrapping="Wrap"
+           Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+    </Grid>
+    <!--</ControlTemplate>-->
+</UserControl>

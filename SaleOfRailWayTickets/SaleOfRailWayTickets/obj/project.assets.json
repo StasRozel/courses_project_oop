@@ -46,6 +46,19 @@
           }
         }
       },
+      "DefaultUnDo/0.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/DefaultUnDo.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/DefaultUnDo.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Extended.Wpf.Toolkit/4.6.0": {
         "type": "package",
         "compile": {
@@ -850,6 +863,22 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "DefaultUnDo/0.3.0": {
+      "sha512": "IZepqzTf2JKb9jQZ2I4kv47vJNzi7/7CEDD6mjF7aDAAAILYiaGTy2wtzRN8/27kAArWkOzgBF6ManAlWibNFQ==",
+      "type": "package",
+      "path": "defaultundo/0.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "defaultundo.0.3.0.nupkg.sha512",
+        "defaultundo.nuspec",
+        "lib/netstandard1.0/DefaultUnDo.dll",
+        "lib/netstandard1.0/DefaultUnDo.xml",
+        "lib/netstandard2.0/DefaultUnDo.dll",
+        "lib/netstandard2.0/DefaultUnDo.xml",
+        "logo.png"
       ]
     },
     "Extended.Wpf.Toolkit/4.6.0": {
@@ -2249,6 +2278,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
+      "DefaultUnDo >= 0.3.0",
       "Extended.Wpf.Toolkit >= 4.6.0",
       "MaterialDesignThemes >= 3.2.0",
       "Microsoft.Data.SqlClient >= 5.2.0",
@@ -2294,6 +2324,10 @@
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
+          "DefaultUnDo": {
+            "target": "Package",
+            "version": "[0.3.0, )"
+          },
           "Extended.Wpf.Toolkit": {
             "target": "Package",
             "version": "[4.6.0, )"

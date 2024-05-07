@@ -40,6 +40,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "DefaultUnDo": {
+              "target": "Package",
+              "version": "[0.3.0, )"
+            },
             "Extended.Wpf.Toolkit": {
               "target": "Package",
               "version": "[4.6.0, )"

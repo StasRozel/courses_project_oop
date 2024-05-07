@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "18dZpAzTsk2lFGUSatd9Skh/wHigRyDxbxtVY+GdC/XBrw17yL7Jg7054dXIcfTzFrkbvkPUfUQaHiGnBQ+phA==",
+  "dgSpecHash": "JAfiWu4lGsp/KvANqYQw3e7+FMUEc6dNDEnlNvCK9NkiotU0nxkGzBEIThqlbGgHiWOVZdjT9HXaWKnMlqZGig==",
   "success": true,
   "projectFilePath": "E:\\Univer\\2_course\\Курсач_ООП\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rozel\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\rozel\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\rozel\\.nuget\\packages\\defaultundo\\0.3.0\\defaultundo.0.3.0.nupkg.sha512",
     "C:\\Users\\rozel\\.nuget\\packages\\extended.wpf.toolkit\\4.6.0\\extended.wpf.toolkit.4.6.0.nupkg.sha512",
     "C:\\Users\\rozel\\.nuget\\packages\\materialdesigncolors\\1.2.7\\materialdesigncolors.1.2.7.nupkg.sha512",
     "C:\\Users\\rozel\\.nuget\\packages\\materialdesignthemes\\3.2.0\\materialdesignthemes.3.2.0.nupkg.sha512",
