@@ -93,7 +93,7 @@ namespace lab4_5
 
         private void Search(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(DataManager.GetDataTable("Tickets"));
+            List<Ticket> tickets = new List<Ticket>(Repository.GetTicketList());
 
             TextBox? searchElement = parameter as TextBox;
 
@@ -121,7 +121,7 @@ namespace lab4_5
 
         private void FilterByTime(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(DataManager.GetDataTable("Tickets"));
+            List<Ticket> tickets = new List<Ticket>(Repository.GetTicketList());
             TextBox? filterElement = parameter as TextBox;
 
             if (filterElement?.Text != "")
@@ -158,7 +158,7 @@ namespace lab4_5
 
             if (filterElement?.IsChecked == true)
             {
-                tickets = new List<Ticket>(DataManager.GetDataTable("Tickets"));
+                tickets = new List<Ticket>(Repository.GetTicketList());
             }
 
             Tickets?.Clear();

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\
+C:\Users\rozel\Documents\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\
 lab4_5
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-E:\Univer\2_course\Курсач_ООП\SaleOfRailWayTickets\SaleOfRailWayTickets\App.xaml
+C:\Users\rozel\Documents\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\App.xaml
 8377146921
 11759336729
-17-1915641619
-234-1209528869
+181600904559
+234-185170799
 MainWindow.xaml;Resources\Lang\lang.en-US.xaml;Resources\Lang\lang.xaml;Resources\Theme\PurpurTheme.xaml;Resources\Theme\SkyTheme.xaml;Resources\UserControl\HeaderTableTickets.xaml;View\AddTicket.xaml;View\InfoTicket.xaml;
 
 False

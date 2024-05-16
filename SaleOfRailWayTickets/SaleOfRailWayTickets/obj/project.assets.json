@@ -2291,11 +2291,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Univer\\2_course\\Курсач_ООП\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
+      "projectUniqueName": "C:\\Users\\rozel\\Documents\\courses_project_oop-master\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
       "projectName": "SaleOfRailWayTickets",
-      "projectPath": "E:\\Univer\\2_course\\Курсач_ООП\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
+      "projectPath": "C:\\Users\\rozel\\Documents\\courses_project_oop-master\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
       "packagesPath": "C:\\Users\\rozel\\.nuget\\packages\\",
-      "outputPath": "E:\\Univer\\2_course\\Курсач_ООП\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\obj\\",
+      "outputPath": "C:\\Users\\rozel\\Documents\\courses_project_oop-master\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rozel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2318,6 +2318,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2364,7 +2369,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

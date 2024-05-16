@@ -60,7 +60,7 @@ namespace lab4_5
             };
             Tickets.Add(newTicket);
 
-            DataManager.AddTicketToTable(newTicket);
+            Repository.Create(newTicket);
         }
 
         public TicketCommand ChangeCommand
@@ -92,7 +92,7 @@ namespace lab4_5
             };
             Tickets[SelectedTicket.Id - 1] = newTicket;
 
-            DataManager.ChangeTicketToTable(newTicket);
+            Repository.Update(newTicket);
 
         }
 
@@ -111,7 +111,7 @@ namespace lab4_5
 
             Tickets?.RemoveAt(id-1);
 
-            DataManager.DeleteTicketToTable(id);
+            Repository.Delete(id);
         }
 
         public Ticket SelectedTicket
@@ -139,7 +139,7 @@ namespace lab4_5
         public TicketsViewModel()
         {
             DBConnector.Connect();
-            Tickets = new ObservableCollection<Ticket>(DataManager.GetDataTable("Tickets"));
+            Tickets = new ObservableCollection<Ticket>(Repository.GetTicketList());
         }
 
 
