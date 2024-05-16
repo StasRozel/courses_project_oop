@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rozel\\Documents\\courses_project_oop-master\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj": {}
+    "E:\\Универ\\2 курс\\courses_project_oop\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rozel\\Documents\\courses_project_oop-master\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj": {
+    "E:\\Универ\\2 курс\\courses_project_oop\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rozel\\Documents\\courses_project_oop-master\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
+        "projectUniqueName": "E:\\Универ\\2 курс\\courses_project_oop\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
         "projectName": "SaleOfRailWayTickets",
-        "projectPath": "C:\\Users\\rozel\\Documents\\courses_project_oop-master\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
+        "projectPath": "E:\\Универ\\2 курс\\courses_project_oop\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
         "packagesPath": "C:\\Users\\rozel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rozel\\Documents\\courses_project_oop-master\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\obj\\",
+        "outputPath": "E:\\Универ\\2 курс\\courses_project_oop\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rozel\\AppData\\Roaming\\NuGet\\NuGet.Config",

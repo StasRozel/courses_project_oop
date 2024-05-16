@@ -120,7 +120,7 @@ namespace lab4_5 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SaleOfRailWayTickets;component/view/addticket.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SaleOfRailWayTickets;V1.0.0.0;component/view/addticket.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\AddTicket.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

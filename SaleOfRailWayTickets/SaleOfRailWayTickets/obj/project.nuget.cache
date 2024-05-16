@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q7/sunGdNVWNWDHRqP7FLJ5DNzhIa97KMHx+P8rbTxVfUItHX7hugTk8Qxwhpt31RAIeCI0vN/FHYXtkGLdW3Q==",
+  "dgSpecHash": "Se55dR8MRuICfDlBPctkBm0GsPZrhxUXX0zPbNUaiUJq6DWl2uuYxt32HZN/1bznFEXFJxv5ZJ0+uCqk7CCVaw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rozel\\Documents\\courses_project_oop-master\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
+  "projectFilePath": "E:\\Универ\\2 курс\\courses_project_oop\\SaleOfRailWayTickets\\SaleOfRailWayTickets\\SaleOfRailWayTickets.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rozel\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\rozel\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
