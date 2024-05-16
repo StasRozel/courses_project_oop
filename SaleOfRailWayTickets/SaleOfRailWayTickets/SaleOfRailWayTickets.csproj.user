@@ -16,6 +16,9 @@
     <Compile Update="View\InfoTicket.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Registration.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Resources\UserControl\HeaderTableTickets.xaml">
@@ -40,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Registration.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

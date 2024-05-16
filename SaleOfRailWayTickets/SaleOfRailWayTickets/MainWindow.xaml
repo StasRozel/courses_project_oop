@@ -13,16 +13,6 @@
         <ImageBrush ImageSource="/Resources/img/background.png" Stretch="Fill" />
     </Window.Background>
 
-    <!--<Window.Resources>
-        <Style TargetType="Button">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=SearchTextbox, Path=Text}" Value="">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>-->
-
     <Grid x:Name="main">
         <Grid>
             <Grid.RowDefinitions>

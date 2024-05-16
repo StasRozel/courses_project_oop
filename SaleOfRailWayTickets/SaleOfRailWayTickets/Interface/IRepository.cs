@@ -9,10 +9,10 @@ namespace lab4_5
     interface IRepository<T> : IDisposable
         where T : class
     {
-        static void GetTicketList() { } 
-        static Ticket GetTickets(int id) { return new Ticket(); } 
-        static void Create(T ticket) { } 
-        static void Update(T ticket) { } 
-        static void Delete(int id) { } 
+        abstract List<T> GetList();
+        abstract Ticket Get(int id);
+        abstract bool Create(T item);
+        abstract void Update(T item);
+        abstract bool Delete(int id); 
     }
 }

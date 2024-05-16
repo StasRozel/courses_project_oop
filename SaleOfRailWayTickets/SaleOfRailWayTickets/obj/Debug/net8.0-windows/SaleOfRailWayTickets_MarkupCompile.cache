@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\rozel\Documents\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\
+C:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\
 lab4_5
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\rozel\Documents\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\App.xaml
-8377146921
+C:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\App.xaml
+91247020257
 11759336729
-181600904559
+232106590839
 234-185170799
-MainWindow.xaml;Resources\Lang\lang.en-US.xaml;Resources\Lang\lang.xaml;Resources\Theme\PurpurTheme.xaml;Resources\Theme\SkyTheme.xaml;Resources\UserControl\HeaderTableTickets.xaml;View\AddTicket.xaml;View\InfoTicket.xaml;
+MainWindow.xaml;Resources\Lang\lang.en-US.xaml;Resources\Lang\lang.xaml;Resources\Theme\PurpurTheme.xaml;Resources\Theme\SkyTheme.xaml;Resources\UserControl\HeaderTableTickets.xaml;View\AddTicket.xaml;View\InfoTicket.xaml;View\Registration.xaml;
 
 False
 

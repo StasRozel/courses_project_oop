@@ -20,37 +20,6 @@
             <Setter Property="Margin" Value="5"/>
             <Setter Property="FontSize" Value="24"/>
         </Style.Setters>
-        <Style.Triggers>
-            <EventTrigger RoutedEvent="KeyDown">
-                <EventTrigger.Actions>
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <ColorAnimation Storyboard.TargetProperty="Background.Color"
-To="#7F27FF" AutoReverse="True" Duration="0:0:02" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger.Actions>
-            </EventTrigger>
-        </Style.Triggers>
-    </Style>
-
-    <Style x:Key="Ticket" TargetType="Grid">
-        <Style.Setters>
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="Background" Value="#9195F6"/>
-        </Style.Setters>
-        <Style.Triggers>
-            <MultiTrigger>
-                <MultiTrigger.Conditions>
-                    <Condition Property="IsMouseOver" Value="True" />
-                </MultiTrigger.Conditions>
-                <MultiTrigger.Setters>
-                    <Setter Property="Background" Value="#7F27FF" />
-                    <Setter Property="Opacity" Value="1" />
-                </MultiTrigger.Setters>
-            </MultiTrigger>
-        </Style.Triggers>
-        
     </Style>
 
 </ResourceDictionary>

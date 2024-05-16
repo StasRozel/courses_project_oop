@@ -53,7 +53,8 @@ namespace lab4_5 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SaleOfRailWayTickets;component/resources/usercontrol/headertabletickets.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SaleOfRailWayTickets;V1.0.0.0;component/resources/usercontrol/headertabletickets" +
+                    ".xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Resources\UserControl\HeaderTableTickets.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
