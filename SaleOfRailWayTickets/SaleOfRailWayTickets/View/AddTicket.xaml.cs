@@ -22,7 +22,7 @@ namespace lab4_5
         public AddTicket()
         {
             InitializeComponent();
-            DataContext = MainWindow.ViewModel;
+            DataContext = AdminPanel.ViewModel;
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)

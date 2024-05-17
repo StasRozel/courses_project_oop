@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:lab4_5.View" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Registration" Height="480" Width="300">
+        Title="Registration" Height="500" Width="300">
     <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="50*" />
@@ -14,13 +14,14 @@
             <RowDefinition Height="30*" />
         </Grid.RowDefinitions>
         <TextBlock Text="Регистрация" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <StackPanel Grid.Row="1">
+        <StackPanel Margin="0,61,0,26" Grid.RowSpan="3">
             <xctk:WatermarkTextBox x:Name="FirstName" Watermark="Имя" Style="{StaticResource CustomTextBox}"/>
             <xctk:WatermarkTextBox x:Name="LastName" Watermark="Фамилия" Style="{StaticResource CustomTextBox}"/>
             <xctk:WatermarkPasswordBox x:Name="Password" Watermark="Пароль" Style="{StaticResource CustomTextBox}"/>
             <xctk:WatermarkPasswordBox x:Name="DoublePassword" Watermark="Повторите пароль" Style="{StaticResource CustomTextBox}"/>
             <xctk:WatermarkTextBox x:Name="Email" Watermark="Почта" Style="{StaticResource CustomTextBox}"/>
-            <Button x:Name="RegistrationButton" Content="Зарегистрироваться" Margin="5, 0, 5, 0" Click="Button_Click" Command="{Binding AddCommand}"/>
+            <Button x:Name="RegistrationButton" Content="Зарегистрироваться" Margin="5, 0, 5, 0" Click="Button_Click" Command="{Binding RegistrationCommand}"/>
+            <Button x:Name="AuthorizationButton" Content="Войти в существующий" Margin="5, 10, 5, 0" Click="Button_Click_1"/>
         </StackPanel>
         
     </Grid>

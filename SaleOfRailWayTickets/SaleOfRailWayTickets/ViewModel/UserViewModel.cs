@@ -1,4 +1,5 @@
 ﻿using lab4_5.Classes;
+using lab4_5.View;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace lab4_5.ViewModel
@@ -14,14 +16,17 @@ namespace lab4_5.ViewModel
     {
         public ObservableCollection<UserModel>? Users { get; set; }
 
-        private TicketCommand addCommand;
+        public UnitWorkContent UnitWorkContent { get; set; }
 
-        public TicketCommand AddCommand
+        private TicketCommand registrationCommand;
+        private TicketCommand authorizationCommand;
+
+        public TicketCommand RegistrationCommand
         {
             get
             {
-                return addCommand ??
-                  (addCommand = new TicketCommand(AddUser, canExecuteTicket));
+                return registrationCommand ??
+                  (registrationCommand = new TicketCommand(RegistrationUser, canExecuteTicket));
             }
         }
 
@@ -30,9 +35,9 @@ namespace lab4_5.ViewModel
             return true;
         }
 
-        private void AddUser(object parameter)
+        private void RegistrationUser(object parameter)
         {
-            string ticketName = parameter as string;
+            string? ticketName = parameter as string;
             string[] userNameArr = ticketName.Split(',');
 
             UserModel newUser = new UserModel
@@ -41,15 +46,42 @@ namespace lab4_5.ViewModel
                 LastName = userNameArr[1],
                 PasswordHash = PasswordHashing.Hash(userNameArr[2]),
                 Email = userNameArr[4],
+                PhoneNumber = "",
+                IsAdmin = false,
 
             };
 
-            RepositoryUsers.Create(newUser);
+            UnitWorkContent.UserRepository.Registration(newUser);
+        }
+
+        public TicketCommand AuthorizationCommand
+        {
+            get
+            {
+                return authorizationCommand ??
+                  (authorizationCommand = new TicketCommand(AuthorizationUser, canExecuteTicket));
+            }
+        }
+
+        private void AuthorizationUser(object parameter)
+        {
+            string[] authParam = (parameter as string).Split(',');
+
+            UserModel? user = UnitWorkContent.UserRepository.Authorization(PasswordHashing.Hash(authParam[0]), authParam[1]);
+
+            MessageBox.Show($"Hello, {user?.FirstName}");
+
+            if (user?.IsAdmin == true)
+            {
+                AdminPanel mainWindow = new AdminPanel();
+                mainWindow.Show();
+                Authorization.authorization.Close();
+            }
         }
 
         public UserViewModel()
         {
-            DBConnector.Connect();
+            UnitWorkContent = new UnitWorkContent(new ApplicationDbContext());
         }
     }
 }

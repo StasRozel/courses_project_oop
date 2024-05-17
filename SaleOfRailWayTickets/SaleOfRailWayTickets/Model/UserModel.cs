@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -10,23 +11,12 @@ namespace lab4_5
 {
     public class UserModel : INotifyPropertyChanged
     {
-        private int userId;
         private string? firstName;
         private string? lastName;
         private string? passwordHash;
         private string? email;
         private string? phoneNumber;
         private bool isAdmin;
-
-        public int UserId
-        {
-            get { return userId; }
-            set 
-            { 
-                userId = value;
-                OnPropertyChanged("UserId");
-            }
-        }
 
         public string? FirstName
         {
@@ -58,6 +48,7 @@ namespace lab4_5
             }
         }
 
+        [Key]
         public string? Email
         {
             get { return email; }

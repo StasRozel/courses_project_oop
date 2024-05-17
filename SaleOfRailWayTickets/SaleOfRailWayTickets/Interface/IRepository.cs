@@ -10,9 +10,9 @@ namespace lab4_5
         where T : class
     {
         abstract List<T> GetList();
-        abstract Ticket Get(int id);
+        abstract T Get(int id);
         abstract bool Create(T item);
         abstract void Update(T item);
-        abstract bool Delete(int id); 
+        abstract bool Delete(T item);
     }
 }

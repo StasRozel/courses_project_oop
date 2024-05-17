@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Identity.Client.NativeInterop;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -11,39 +12,80 @@ using System.Windows;
 
 namespace lab4_5.Classes
 {
-    public class TicketRepository : IRepository<Ticket>
+    public class TicketRepository : IRepository<TicketEssence>
     {
-        
+        private ApplicationDbContext context;
 
-        public TicketRepository()
+        public TicketRepository(ApplicationDbContext context)
         {
+            this.context = context;
         }
 
-        public bool Create(Ticket item)
+        public bool Create(TicketEssence item)
         {
-            throw new NotImplementedException();
-        }
+           try
+            {
+                context.TicketsDbSet.Add(item);
+                context.SaveChanges();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
 
-        public bool Delete(int id)
+            return true;
+        } 
+
+        public bool Delete(TicketEssence item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                context.TicketsDbSet.Remove(item);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+            return true;
         }
 
         public void Dispose() {}
 
-        public Ticket Get(int id)
+        public TicketEssence Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Ticket> GetList()
+        public List<TicketEssence> GetList()
         {
-            throw new NotImplementedException();
+            return context.TicketsDbSet.ToList();
         }
 
-        public void Update(Ticket item)
+        public void Update(TicketEssence item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (item != null)
+                {
+                    TicketEssence? existingTicket = context.TicketsDbSet.Find(item.Id);
+                    existingTicket.NameWay = item.NameWay;
+                    existingTicket.Description = item.Description;
+                    existingTicket.Time = item.Time;
+                    existingTicket.Price = item.Price;
+                    existingTicket.NumberTrain = item.NumberTrain;
+                    existingTicket.Type = item.Type;
+                    
+                    // Обновите другие свойства, которые нужно изменить
+                    context.TicketsDbSet.Update(existingTicket);
+                    context.SaveChanges();
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

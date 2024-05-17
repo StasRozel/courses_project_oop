@@ -28,7 +28,7 @@
     <None Remove="Resources\img\background.jpg" />
     <None Remove="Resources\img\background.png" />
     <None Remove="Resources\img\cursor.cur" />
-    <None Remove="Resources\img\electric-train.png" />
+    <None Remove="Resources\img\electric.png" />
     <None Remove="Resources\img\Logo%281%29.ico" />
     <None Remove="Resources\img\Logo%282%29.ico" />
     <None Remove="Resources\img\Logo.ico" />
@@ -62,7 +62,7 @@
   <ItemGroup>
     <Resource Include="Resources\img\background.png" />
     <Resource Include="Resources\img\cursor.cur" />
-    <Resource Include="Resources\img\electric-train.png" />
+    <Resource Include="Resources\img\electric.png" />
     <Resource Include="Resources\img\Logo(2).ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -71,6 +71,12 @@
     <Resource Include="Resources\img\translate.png" />
     <Resource Include="Resources\img\_arrow.cur" />
     <Resource Include="Resources\Json\ways.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\Authorization.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,9 @@
 ﻿
-FC:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\App.xaml;;
-FC:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\MainWindow.xaml;;
-FC:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\Resources\UserControl\HeaderTableTickets.xaml;;
-FC:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\View\AddTicket.xaml;;
-FC:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\View\InfoTicket.xaml;;
-FC:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\View\Registration.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\App.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\Resources\UserControl\HeaderTableTickets.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\View\AddTicket.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\View\Authorization.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\View\InfoTicket.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\View\Registration.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\View\AdminPanel.xaml;;
 

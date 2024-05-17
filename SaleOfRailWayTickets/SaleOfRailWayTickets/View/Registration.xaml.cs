@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,15 +21,26 @@ namespace lab4_5.View
     /// </summary>
     public partial class Registration : Window
     {
+        Registration registration;
+
         public Registration()
         {
             InitializeComponent();
+            registration = this;
             DataContext = new UserViewModel();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             RegistrationButton.CommandParameter = $"{FirstName.Text},{LastName.Text},{Password.Text},{DoublePassword.Text},{Email.Text}";
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Authorization authorization = new Authorization();
+            authorization.Show();
+
+            registration.Close();
         }
     }
 }

@@ -40,7 +40,7 @@
 
         <StackPanel Grid.Row="0" Grid.Column="3">
             <Button x:Name="ButtonChange" Width="50" Content="&#128190;" Margin="5" Command="{Binding ChangeCommand}" Click="SaveChange_Click"/>
-            <Button x:Name="ButtonDelete" Width="50" Content="&#128465;" Margin="5" Command="{Binding DeleteCommand}" Click="Delete_Click"/>
+            <Button x:Name="ButtonDelete" Width="50" Content="&#128465;" Margin="5" Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedTicket}"/>
         </StackPanel>
     </Grid>
 </Window>

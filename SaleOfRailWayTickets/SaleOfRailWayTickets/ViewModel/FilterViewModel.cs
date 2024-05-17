@@ -37,18 +37,18 @@ namespace lab4_5
 
         private void SortByPrice(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>();
+            List<TicketEssence> tickets = new List<TicketEssence>();
 
             countSortByPrice++;
 
             if (countSortByPrice % 2 == 1)
-                tickets = new List<Ticket>(Tickets?.OrderBy(ticket => ticket.Price));
+                tickets = new List<TicketEssence>(Tickets?.OrderBy(ticket => ticket.Price));
             else
-                tickets = new List<Ticket>(Tickets?.OrderByDescending(ticket => ticket.Price));
+                tickets = new List<TicketEssence>(Tickets?.OrderByDescending(ticket => ticket.Price));
 
             Tickets.Clear();
 
-            foreach (Ticket ticket in tickets)
+            foreach (TicketEssence ticket in tickets)
             {
                 Tickets.Add(ticket);
             }
@@ -65,18 +65,18 @@ namespace lab4_5
 
         private void SortByAlphabet(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(Tickets);
+            List<TicketEssence> tickets = new List<TicketEssence>(Tickets);
 
             countSortByAlpfabet++;
 
             if (countSortByAlpfabet % 2 == 1)
-                tickets = new List<Ticket>(Tickets.OrderBy(ticket => ticket.NameWay));
+                tickets = new List<TicketEssence>(Tickets.OrderBy(ticket => ticket.NameWay));
             else
-                tickets = new List<Ticket>(Tickets.OrderByDescending(ticket => ticket.NameWay));
+                tickets = new List<TicketEssence>(Tickets.OrderByDescending(ticket => ticket.NameWay));
 
             Tickets.Clear();
 
-            foreach (Ticket ticket in tickets)
+            foreach (TicketEssence ticket in tickets)
             {
                 Tickets.Add(ticket);
             }
@@ -93,7 +93,7 @@ namespace lab4_5
 
         private void Search(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(Repository.GetTicketList());
+            List<TicketEssence> tickets = new List<TicketEssence>(UnitWorkContent.TicketRepository.GetList());
 
             TextBox? searchElement = parameter as TextBox;
 
@@ -104,7 +104,7 @@ namespace lab4_5
 
             Tickets?.Clear();
 
-            foreach (Ticket ticket in tickets)
+            foreach (TicketEssence ticket in tickets)
             {
                 Tickets?.Add(ticket);
             }
@@ -121,7 +121,7 @@ namespace lab4_5
 
         private void FilterByTime(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(Repository.GetTicketList());
+            List<TicketEssence> tickets = new List<TicketEssence>(UnitWorkContent.TicketRepository.GetList());
             TextBox? filterElement = parameter as TextBox;
 
             if (filterElement?.Text != "")
@@ -135,7 +135,7 @@ namespace lab4_5
 
             Tickets?.Clear();
 
-            foreach (Ticket ticket in tickets)
+            foreach (TicketEssence ticket in tickets)
             {
                 Tickets?.Add(ticket);
             }
@@ -152,18 +152,18 @@ namespace lab4_5
 
         private void DisplayAll(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>();
+            List<TicketEssence> tickets = new List<TicketEssence>();
 
-            RadioButton filterElement = parameter as RadioButton;
+            RadioButton? filterElement = parameter as RadioButton;
 
             if (filterElement?.IsChecked == true)
             {
-                tickets = new List<Ticket>(Repository.GetTicketList());
+                tickets = new List<TicketEssence>(UnitWorkContent.TicketRepository.GetList());
             }
 
             Tickets?.Clear();
 
-            foreach (Ticket ticket in tickets)
+            foreach (TicketEssence ticket in tickets)
             {
                 Tickets?.Add(ticket);
             }
@@ -180,8 +180,8 @@ namespace lab4_5
 
         private void DisplayTrain(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(Tickets);
-            RadioButton filterElement = parameter as RadioButton;
+            List<TicketEssence> tickets = new List<TicketEssence>(Tickets);
+            RadioButton? filterElement = parameter as RadioButton;
 
             if (filterElement?.IsChecked == true)
             {
@@ -190,7 +190,7 @@ namespace lab4_5
 
             Tickets?.Clear();
 
-            foreach (Ticket ticket in tickets)
+            foreach (TicketEssence ticket in tickets)
             {
                 Tickets?.Add(ticket);
             }
@@ -207,8 +207,8 @@ namespace lab4_5
 
         private void DisplayElectric(object parameter)
         {
-            List<Ticket> tickets = new List<Ticket>(Tickets);
-            RadioButton filterElement = parameter as RadioButton;
+            List<TicketEssence> tickets = new List<TicketEssence>(Tickets);
+            RadioButton? filterElement = parameter as RadioButton;
 
             if (filterElement?.IsChecked == true)
             {
@@ -217,7 +217,7 @@ namespace lab4_5
 
             Tickets?.Clear();
 
-            foreach (Ticket ticket in tickets)
+            foreach (TicketEssence ticket in tickets)
             {
                 Tickets?.Add(ticket);
             }

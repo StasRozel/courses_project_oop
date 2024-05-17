@@ -24,17 +24,17 @@ namespace lab4_5
         public ChangeTicket()
         {
             InitializeComponent();
-            this.DataContext = MainWindow.ViewModel;
+            this.DataContext = AdminPanel.ViewModel;
         }
 
         private void SaveChange_Click(object sender, RoutedEventArgs e)
         {
-            ButtonChange.CommandParameter = $"{MainWindow.ViewModel.SelectedTicket.Id},{ChangeNameWay.Text},{ChangeDescription.Text},{ChangeNumberTrain.Text},{ChangePrice.Text},{TicketTimePicker.Text},{Train.IsChecked}";
+            ButtonChange.CommandParameter = $"{AdminPanel.ViewModel.SelectedTicket.Id},{ChangeNameWay.Text},{ChangeDescription.Text},{ChangeNumberTrain.Text},{ChangePrice.Text},{TicketTimePicker.Text},{Train.IsChecked}";
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            ButtonDelete.CommandParameter = MainWindow.ViewModel.SelectedTicket.Id;
+            ButtonDelete.CommandParameter = AdminPanel.ViewModel.SelectedTicket.Id;
         }
 
     }

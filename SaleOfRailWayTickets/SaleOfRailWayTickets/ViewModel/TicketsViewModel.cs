@@ -18,9 +18,11 @@ namespace lab4_5
 {
     public partial class TicketsViewModel : INotifyPropertyChanged
     {
-        public Ticket selectedTicket;
+        public TicketEssence selectedTicket;
 
-        public ObservableCollection<Ticket>? Tickets { get; set; }
+        public ObservableCollection<TicketEssence>? Tickets { get; set; }
+
+        public UnitWorkContent UnitWorkContent { get; set; }
 
         private TicketCommand addCommand;
         private TicketCommand changeCommand;
@@ -42,25 +44,23 @@ namespace lab4_5
 
         private void AddTicket(object parameter)
         {
-            string ticketName = parameter as string;
-            string[] ticketNameArr = ticketName.Split(',');
-            string pathTrain = "Resources/img/train.png";
-            string pathElectric = "Resources/img/electric-train.png";
 
-            Ticket newTicket = new Ticket
+            string? ticketName = parameter as string;
+            string[] ticketNameArr = ticketName.Split(',');
+
+            TicketEssence newTicket = new TicketEssence
             {
-                Id = Tickets.Count + 1,
+                Id = Tickets.Count() + 1,
                 NameWay = ticketNameArr[0],
                 Description = ticketNameArr[1],
                 NumberTrain = Convert.ToInt32(ticketNameArr[2]),
                 Price = Convert.ToDouble(ticketNameArr[3]),
                 Time = TimeSpan.Parse(ticketNameArr[4]),
-                Img = Convert.ToBoolean(ticketNameArr[5]) ? pathTrain : pathElectric,
                 Type = Convert.ToBoolean(ticketNameArr[5]) ? "train" : "electric"
             };
             Tickets.Add(newTicket);
 
-            Repository.Create(newTicket);
+            UnitWorkContent.TicketRepository.Create(newTicket);
         }
 
         public TicketCommand ChangeCommand
@@ -76,10 +76,8 @@ namespace lab4_5
         {
             string? ticketName = parameter as string;
             string[] ticketNameArr = ticketName.Split(',');
-            string pathTrain = "Resources/img/train.png";
-            string pathElectric = "Resources/img/electric-train.png";
 
-            Ticket newTicket = new Ticket
+            TicketEssence newTicket = new TicketEssence
             {
                 Id = Convert.ToInt32(ticketNameArr[0]),
                 NameWay = ticketNameArr[1],
@@ -87,12 +85,11 @@ namespace lab4_5
                 NumberTrain = Convert.ToInt32(ticketNameArr[3]),
                 Price = Convert.ToDouble(ticketNameArr[4]),
                 Time = TimeSpan.Parse(ticketNameArr[5]),
-                Img = Convert.ToBoolean(ticketNameArr[6]) ? pathTrain : pathElectric,
                 Type = Convert.ToBoolean(ticketNameArr[6]) ? "train" : "electric"
             };
-            Tickets[SelectedTicket.Id - 1] = newTicket;
+            //Tickets[SelectedTicket.Id - 1] = newTicket;
 
-            Repository.Update(newTicket);
+             UnitWorkContent.TicketRepository.Update(newTicket);
 
         }
 
@@ -107,14 +104,15 @@ namespace lab4_5
 
         private void DeleteTicket(object parameter)
         {
-            int id = (int)parameter;
+            TicketEssence ticket = (TicketEssence)parameter;
 
-            Tickets?.RemoveAt(id-1);
+            Tickets?.Remove(ticket);
 
-            Repository.Delete(id);
+            UnitWorkContent.TicketRepository.Delete(ticket);
+
         }
 
-        public Ticket SelectedTicket
+        public TicketEssence SelectedTicket
         {
             get { return selectedTicket; }
             set
@@ -138,8 +136,8 @@ namespace lab4_5
 
         public TicketsViewModel()
         {
-            DBConnector.Connect();
-            Tickets = new ObservableCollection<Ticket>(Repository.GetTicketList());
+            UnitWorkContent = new UnitWorkContent(new ApplicationDbContext());
+            Tickets = new ObservableCollection<TicketEssence>(UnitWorkContent.TicketRepository.GetList());
         }
 
 

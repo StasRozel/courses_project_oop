@@ -42,7 +42,10 @@
     <Page Update="View\InfoTicket.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="View\AdminPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Authorization.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Registration.xaml">
