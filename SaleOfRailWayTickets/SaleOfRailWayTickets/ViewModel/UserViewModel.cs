@@ -14,7 +14,7 @@ namespace lab4_5.ViewModel
 {
     public class UserViewModel
     {
-        public ObservableCollection<UserModel>? Users { get; set; }
+        public ObservableCollection<TicketEssence>? Tickets { get; set; }
 
         public UnitWorkContent UnitWorkContent { get; set; }
 
@@ -73,8 +73,13 @@ namespace lab4_5.ViewModel
 
             if (user?.IsAdmin == true)
             {
-                AdminPanel mainWindow = new AdminPanel();
-                mainWindow.Show();
+                AdminPanel adminPanel = new AdminPanel();
+                adminPanel.Show();
+                Authorization.authorization.Close();
+            } else
+            {
+                ClientWindow clientWindow = new ClientWindow();
+                clientWindow.Show();
                 Authorization.authorization.Close();
             }
         }
@@ -82,6 +87,7 @@ namespace lab4_5.ViewModel
         public UserViewModel()
         {
             UnitWorkContent = new UnitWorkContent(new ApplicationDbContext());
+            Tickets = new ObservableCollection<TicketEssence>(UnitWorkContent.TicketRepository.GetList());
         }
     }
 }

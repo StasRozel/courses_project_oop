@@ -1,0 +1,45 @@
+﻿<Page x:Class="lab4_5.Pages.Schulde"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:lab4_5" xmlns:local1="clr-namespace:lab4_5"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1440"
+      Title="Schulde">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition Height="0.9*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Rectangle Style="{DynamicResource ColorTable}" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="8" />
+        <local:HeaderTableTickets/>
+        <ListBox Grid.Column="0" Grid.ColumnSpan="6" ItemsSource="{Binding Tickets}"
+SelectedItem="{Binding SelectedTicket}" Grid.Row="1"  Grid.RowSpan="2">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="1540">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"></ColumnDefinition>
+                            <ColumnDefinition Width="200*"></ColumnDefinition>
+                            <ColumnDefinition Width="100*"></ColumnDefinition>
+                            <ColumnDefinition Width="40*"></ColumnDefinition>
+                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                            <ColumnDefinition Width="30*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" FontSize="18" Text="{Binding Path=Id}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="1" FontSize="18" Text="{Binding Path=NameWay}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="2" FontSize="18" Text="{Binding Path=Time}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="3" FontSize="18" Text="{Binding Path=Price}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="4" FontSize="18" Text="{Binding Path=NumberTrain}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Image Grid.Column="5" Source="{Binding Path=Img}" Stretch="Uniform" Width="30" Height="30"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>

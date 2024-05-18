@@ -493,3 +493,11 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\View\Authorization.baml
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\View\AdminPanel.g.cs
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\View\AdminPanel.baml
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\View\ClientWindow.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\View\ClientWindow.baml
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Home.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Home.baml
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Account.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Schulde.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Account.baml
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Schulde.baml

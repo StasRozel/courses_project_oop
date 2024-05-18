@@ -7,10 +7,22 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Pages\Account.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Home.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Schulde.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Resources\UserControl\HeaderTableTickets.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\AddTicket.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ClientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\InfoTicket.xaml.cs">
@@ -21,6 +33,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\Account.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Schulde.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\UserControl\HeaderTableTickets.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -37,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AddTicket.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ClientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\InfoTicket.xaml">

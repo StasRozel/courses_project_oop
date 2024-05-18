@@ -90,7 +90,7 @@ namespace lab4_5
 
         public string Img
         {
-            get { return $"Resources/img/{type}.png"; }
+            get { return $"/Resources/img/{type}.png"; }
         }
 
         public string Print()

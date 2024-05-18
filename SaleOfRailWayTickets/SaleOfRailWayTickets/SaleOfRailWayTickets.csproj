@@ -25,14 +25,19 @@
   <ItemGroup>
     <None Remove="background.jpg" />
     <None Remove="img1.png" />
+    <None Remove="Resources\img\account.png" />
     <None Remove="Resources\img\background.jpg" />
     <None Remove="Resources\img\background.png" />
+    <None Remove="Resources\img\background_account.png" />
     <None Remove="Resources\img\cursor.cur" />
     <None Remove="Resources\img\electric.png" />
+    <None Remove="Resources\img\history_watch.png" />
+    <None Remove="Resources\img\home.png" />
     <None Remove="Resources\img\Logo%281%29.ico" />
     <None Remove="Resources\img\Logo%282%29.ico" />
     <None Remove="Resources\img\Logo.ico" />
     <None Remove="Resources\img\Logo.png" />
+    <None Remove="Resources\img\schulde.png" />
     <None Remove="Resources\img\themes.png" />
     <None Remove="Resources\img\train.png" />
     <None Remove="Resources\img\translate.png" />
@@ -60,12 +65,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\img\account.png" />
     <Resource Include="Resources\img\background.png" />
+    <Resource Include="Resources\img\background_account.png" />
     <Resource Include="Resources\img\cursor.cur" />
     <Resource Include="Resources\img\electric.png" />
+    <Resource Include="Resources\img\history_watch.png" />
+    <Resource Include="Resources\img\home.png" />
     <Resource Include="Resources\img\Logo(2).ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\img\schulde.png" />
     <Resource Include="Resources\img\themes.png" />
     <Resource Include="Resources\img\train.png" />
     <Resource Include="Resources\img\translate.png" />
