@@ -501,3 +501,11 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Schulde.g.cs
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Account.baml
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Schulde.baml
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\OrderTicket.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\PaymentByCard.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\OrderTicket.baml
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\PaymentByCard.baml
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\SuccessfulPurchase.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\BadPurchase.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\BadPurchase.baml
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\SuccessfulPurchase.baml

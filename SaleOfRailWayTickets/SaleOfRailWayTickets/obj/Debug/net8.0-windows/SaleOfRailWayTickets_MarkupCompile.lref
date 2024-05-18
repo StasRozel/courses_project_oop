@@ -1,8 +1,12 @@
 ﻿
 FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\App.xaml;;
 FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\Pages\Account.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\Pages\BadPurchase.xaml;;
 FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\Pages\Home.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\Pages\OrderTicket.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\Pages\PaymentByCard.xaml;;
 FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\Pages\Schulde.xaml;;
+FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\Pages\SuccessfulPurchase.xaml;;
 FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\Resources\UserControl\HeaderTableTickets.xaml;;
 FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\View\AddTicket.xaml;;
 FE:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\View\AdminPanel.xaml;;

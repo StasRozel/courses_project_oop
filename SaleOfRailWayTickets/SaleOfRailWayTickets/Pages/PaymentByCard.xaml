@@ -1,0 +1,96 @@
+﻿<Page x:Class="lab4_5.Pages.PaymentByCard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:lab4_5.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1440"
+      Title="PaymentByCard">
+
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="200 220">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="0" Grid.RowSpan="4" Style="{DynamicResource ColorTable}" RadiusX="40" RadiusY="40"/>
+
+        <TextBlock FontSize="48" Margin="30 0"><Run Language="ru-ru" Text="Данные карты"/></TextBlock>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="100*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Width="350" Height="80" Grid.Row="0" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="77*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Имя держателя" />
+                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+            </Grid>
+
+            <Grid Width="350" Height="80" Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="77*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Срок действия" />
+                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+            </Grid>
+
+
+            <Grid Width="350" Height="80" Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="77*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="CVV" />
+                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+            </Grid>
+
+            <Grid Width="350" Height="80" Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="77*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Номер карты" />
+                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+            </Grid>
+
+
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="100*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1" Width="350" Height="40" Content="Оплатить" Click="Button_Click" />
+        </Grid>
+    </Grid>
+</Page>

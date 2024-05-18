@@ -21,7 +21,7 @@ SelectedItem="{Binding SelectedTicket}" Grid.Row="1"  Grid.RowSpan="2">
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="1540">
+                    <Grid Width="1540" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30*"></ColumnDefinition>
                             <ColumnDefinition Width="200*"></ColumnDefinition>

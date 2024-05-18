@@ -10,10 +10,19 @@
     <Compile Update="Pages\Account.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\BadPurchase.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\PaymentByCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Schulde.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\SuccessfulPurchase.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Resources\UserControl\HeaderTableTickets.xaml.cs">
@@ -28,6 +37,9 @@
     <Compile Update="View\InfoTicket.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\OrderTicket.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Registration.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -36,10 +48,19 @@
     <Page Update="Pages\Account.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\BadPurchase.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Home.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\PaymentByCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Schulde.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\SuccessfulPurchase.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\UserControl\HeaderTableTickets.xaml">
@@ -70,6 +91,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Authorization.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\OrderTicket.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Registration.xaml">
