@@ -91,7 +91,7 @@ namespace lab4_5.ViewModel
         private void AuthorizationUser(object parameter)
         {
             string email = Authorization.authorization.Email.Text;
-            string password = Authorization.authorization.Password.Text;
+            string password = Authorization.authorization.Password.Password;
 
             UserModel? authUser = UnitWorkContent.UserRepository.Authorization(PasswordHashing.Hash(password), email);
 

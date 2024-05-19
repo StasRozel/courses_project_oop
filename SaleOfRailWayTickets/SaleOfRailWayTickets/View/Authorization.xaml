@@ -16,7 +16,7 @@
         <StackPanel Margin="0,61,0,10" Grid.RowSpan="2">
             <xctk:WatermarkTextBox x:Name="Email" Watermark="Почта" Style="{StaticResource CustomTextBox}"/>
             <xctk:WatermarkPasswordBox x:Name="Password" Watermark="Пароль" Style="{StaticResource CustomTextBox}"/>
-            <Button x:Name="RegistrationButton" Content="Войти" Margin="5, 0, 5, 0" Click="Button_Click" Command="{Binding AuthorizationCommand}"/>
+            <Button x:Name="RegistrationButton" Content="Войти" Margin="5, 0, 5, 0" Command="{Binding AuthorizationCommand}"/>
             <Button Content="Создать аккаунт" Margin="5, 10, 5, 0" Click="Button_Click_1"/>
         </StackPanel>
         

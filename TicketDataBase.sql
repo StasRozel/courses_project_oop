@@ -27,6 +27,8 @@ CREATE TABLE Users (
 
 SELECT * FROM Users;
 
+Delete from Users where LastName = 'Rozel'
+
 -- Таблица 3: PurchasedTickets (Купленные билеты)
 CREATE TABLE PurchasedTickets (
     PurchaseId INT PRIMARY KEY,

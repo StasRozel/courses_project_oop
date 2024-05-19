@@ -29,11 +29,6 @@ namespace lab4_5.View
             DataContext = new UserViewModel();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            RegistrationButton.CommandParameter = $"{Password.Text},{Email.Text}";
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Registration registration = new Registration();
