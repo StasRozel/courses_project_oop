@@ -21,7 +21,7 @@ namespace lab4_5.View
     /// </summary>
     public partial class Registration : Window
     {
-        Registration registration;
+        public static Registration registration;
 
         public Registration()
         {
@@ -32,7 +32,7 @@ namespace lab4_5.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            RegistrationButton.CommandParameter = $"{FirstName.Text},{LastName.Text},{Password.Text},{DoublePassword.Text},{Email.Text}";
+            RegistrationButton.CommandParameter = $"{FirstName.Text},{LastName.Text},{Password.Password},{DoublePassword.Password},{Email.Text}";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

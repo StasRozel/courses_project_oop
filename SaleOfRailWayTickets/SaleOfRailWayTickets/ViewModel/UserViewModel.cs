@@ -49,18 +49,34 @@ namespace lab4_5.ViewModel
             string? ticketName = parameter as string;
             string[] userNameArr = ticketName.Split(',');
 
-            UserModel newUser = new UserModel
+            int pass = Convert.ToInt32(userNameArr[2]);
+            int passDoub = Convert.ToInt32(userNameArr[3]);
+
+            if (pass == passDoub)
             {
-                FirstName = userNameArr[0],
-                LastName = userNameArr[1],
-                PasswordHash = PasswordHashing.Hash(userNameArr[2]),
-                Email = userNameArr[4],
-                PhoneNumber = "",
-                IsAdmin = false,
+                UserModel newUser = new UserModel
+                {
+                    FirstName = userNameArr[0],
+                    LastName = userNameArr[1],
+                    PasswordHash = PasswordHashing.Hash(userNameArr[2]),
+                    Email = userNameArr[4],
+                    PhoneNumber = "",
+                    IsAdmin = false,
 
-            };
+                };
 
-            UnitWorkContent.UserRepository.Registration(newUser);
+                UnitWorkContent.UserRepository.Registration(newUser);
+
+                App.session.AuthUser = newUser;
+
+                ClientWindow clientWindow = new ClientWindow();
+                App.session.clientWindow = clientWindow;
+                clientWindow.Show();
+                Registration.registration.Close();
+            } else
+            {
+                MessageBox.Show("Пароли должны совпадать!");
+            }
         }
 
         public TicketCommand AuthorizationCommand

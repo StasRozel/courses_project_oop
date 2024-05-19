@@ -25,7 +25,7 @@ CREATE TABLE Users (
 	isAdmin bit NOT NULL
 );
 
---SELECT * FROM Users;
+SELECT * FROM Users;
 
 -- Таблица 3: PurchasedTickets (Купленные билеты)
 CREATE TABLE PurchasedTickets (
@@ -40,7 +40,6 @@ CREATE TABLE PurchasedTickets (
 	[Type] NVARCHAR(50) NOT NULL
 );
 
-DROP TABLE PurchasedTickets;
 
 SELECT * FROM PurchasedTickets
 
