@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:lab4_5.Pages"
+      xmlns:local="clr-namespace:lab4_5.Classes"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1440"
       Title="OrderTicket">
@@ -30,7 +30,7 @@
  
         <TextBlock Text="Покупка билета" FontSize="48" Margin="30 0"/>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" DataContext="Valid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100*" />
                 <ColumnDefinition Width="100*" />
@@ -49,7 +49,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Фамилия" />
-                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+                <TextBox x:Name="LastNameTB" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
             </Grid>
 
             <Grid Width="350" Height="80" Grid.Row="0" Grid.Column="1">
@@ -59,7 +59,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Имя" />
-                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+                <TextBox x:Name="FirstNameTB" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
             </Grid>
 
             <Grid Width="350" Height="80" Grid.Row="0" Grid.Column="2">
@@ -69,7 +69,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Отчество" />
-                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+                <TextBox x:Name="SurnameTB" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
             </Grid>
 
             <Grid Width="350" Height="80" Grid.Row="1" Grid.Column="1">
@@ -79,7 +79,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Номер документа" />
-                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+                <TextBox x:Name="TypeDocTB" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
             </Grid>
 
             <Grid Width="350" Height="80" Grid.Row="1" Grid.Column="0">
@@ -89,18 +89,9 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Тип документа" />
-                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+                <TextBox x:Name="DocNumberTB" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
             </Grid>
 
-            <Grid Width="350" Height="80" Grid.Row="1" Grid.Column="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25*" />
-                    <RowDefinition Height="77*" />
-                </Grid.RowDefinitions>
-
-                <TextBlock Grid.Row="0" Text="Количество пассажиров" />
-                <TextBox Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
-            </Grid>
         </Grid>
         <Grid Grid.Row="2" Margin="40 0">
             <Grid.ColumnDefinitions>
@@ -108,9 +99,9 @@
                 <ColumnDefinition Width="95*" />
             </Grid.ColumnDefinitions>
 
-            <CheckBox HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <CheckBox x:Name="CheckAgreement" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
-            <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="Подтверждаю, что с правилами оформления и использования электронных проездных документов (билетов) на поезда с ненумерованными местами ознакомлен" />
+            <TextBlock TextWrapping="Wrap" Grid.Column="1" VerticalAlignment="Center" Text="Подтверждаю, что с правилами оформления и использования электронных проездных документов (билетов) на поезда с ненумерованными местами ознакомлен" />
         </Grid>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
@@ -119,7 +110,7 @@
                 <ColumnDefinition Width="100*" />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="2" Width="350" Height="40" Content="Подтвердить" Click="Button_Click" />
+            <Button Grid.Column="2" Width="350" Height="40" Content="Подтвердить" Command="{Binding OrderCommand}" />
         </Grid>
     </Grid>
 </Page>

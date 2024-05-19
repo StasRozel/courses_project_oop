@@ -21,7 +21,11 @@ namespace lab4_5.Pages
     /// </summary>
     public partial class Home : Page
     {
-        public Home(UserViewModel context)
+        public Home()
+        {
+        }
+
+        public Home(PurchasedTicketViewModel context)
         {
             InitializeComponent();
             DataContext = context;  

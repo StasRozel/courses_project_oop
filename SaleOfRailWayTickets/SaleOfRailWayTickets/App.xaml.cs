@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using lab4_5.Classes;
+using System.Configuration;
 using System.Data;
 using System.Globalization;
 using System.IO;
@@ -14,10 +15,12 @@ namespace lab4_5
     {
         static int countClickTheme = 0;
         static int countClickLang = 0;
+        public static Session? session;
 
         public App()
         {
             InitializeComponent();
+            session = new Session();
             //App.LanguageChanged += App_LanguageChanged;
         }
 

@@ -21,7 +21,7 @@ namespace lab4_5.Pages
     /// </summary>
     public partial class Schulde : Page
     {
-        public Schulde(UserViewModel context)
+        public Schulde(PurchasedTicketViewModel context)
         {
             InitializeComponent();
             DataContext = context;

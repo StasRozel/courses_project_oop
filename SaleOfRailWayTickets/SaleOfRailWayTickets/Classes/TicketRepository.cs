@@ -12,7 +12,7 @@ using System.Windows;
 
 namespace lab4_5.Classes
 {
-    public class TicketRepository : IRepository<TicketEssence>
+    public class TicketRepository : IRepository<TicketModel>
     {
         private ApplicationDbContext context;
 
@@ -21,7 +21,7 @@ namespace lab4_5.Classes
             this.context = context;
         }
 
-        public bool Create(TicketEssence item)
+        public bool Create(TicketModel item)
         {
            try
             {
@@ -36,7 +36,7 @@ namespace lab4_5.Classes
             return true;
         } 
 
-        public bool Delete(TicketEssence item)
+        public bool Delete(TicketModel item)
         {
             try
             {
@@ -54,24 +54,25 @@ namespace lab4_5.Classes
 
         public void Dispose() {}
 
-        public TicketEssence Get(int id)
+        public TicketModel Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<TicketEssence> GetList()
+        public List<TicketModel> GetList()
         {
             return context.TicketsDbSet.ToList();
         }
 
-        public void Update(TicketEssence item)
+        public void Update(TicketModel item)
         {
             try
             {
                 if (item != null)
                 {
-                    TicketEssence? existingTicket = context.TicketsDbSet.Find(item.Id);
-                    existingTicket.NameWay = item.NameWay;
+                    TicketModel? existingTicket = context.TicketsDbSet.Find(item.Id);
+                    existingTicket.From = item.From;
+                    existingTicket.To = item.To;
                     existingTicket.Description = item.Description;
                     existingTicket.Time = item.Time;
                     existingTicket.Price = item.Price;

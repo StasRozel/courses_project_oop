@@ -1,6 +1,9 @@
-﻿using lab4_5.View;
+﻿using lab4_5.Classes;
+using lab4_5.View;
+using lab4_5.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,19 +24,12 @@ namespace lab4_5.Pages
     /// </summary>
     public partial class OrderTicket : Page
     {
-        public OrderTicket()
+
+        public OrderTicket(PurchasedTicketViewModel context)
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ClientWindow? window = App.Current.MainWindow as ClientWindow;
-
-            if (window != null)
-            {
-                window.MainFrame.Navigate(new PaymentByCard());
-            }
+            DataContext = context;
+            
         }
     }
 }

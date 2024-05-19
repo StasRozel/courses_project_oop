@@ -60,24 +60,24 @@
                 <TextBlock Foreground="#fff" FontSize="32" VerticalAlignment="Center" Text="История купленных билетов " />
             </StackPanel>
             <Rectangle Grid.Row="1" Grid.RowSpan="2" Style="{DynamicResource ColorTable}" Margin="115 0"/>
-            <local:HeaderTableTickets Grid.Row="1" VerticalAlignment="Top" Margin="115 0"/>
-            <ListBox ItemsSource="{Binding Tickets}" SelectedItem="{Binding SelectedTicket}" Margin="115 0" Grid.Row="2">
+            
+            <ListBox ItemsSource="{Binding PurchaseTicketsDisplay}" SelectedItem="{Binding SelectedTicket}" Margin="115 0" Grid.Row="2">
 
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid Width="1300">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="30*"></ColumnDefinition>
-                                <ColumnDefinition Width="200*"></ColumnDefinition>
+                                <ColumnDefinition Width="150*"></ColumnDefinition>
+                                <ColumnDefinition Width="150*"></ColumnDefinition>
                                 <ColumnDefinition Width="100*"></ColumnDefinition>
                                 <ColumnDefinition Width="40*"></ColumnDefinition>
                                 <ColumnDefinition Width="50*"></ColumnDefinition>
                                 <ColumnDefinition Width="30*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" FontSize="18" Text="{Binding Path=Id}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Grid.Column="1" FontSize="18" Text="{Binding Path=NameWay}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock Grid.Column="2" FontSize="18" Text="{Binding Path=Time}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" FontSize="18" Text="{Binding Path=From}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" FontSize="18" Text="{Binding Path=To}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="2" FontSize="18" Text="{Binding Path=PurchaseTime}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="3" FontSize="18" Text="{Binding Path=Price}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="4" FontSize="18" Text="{Binding Path=NumberTrain}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Image Grid.Column="5" Source="{Binding Path=Img}" Stretch="Uniform" Width="30" Height="30"/>

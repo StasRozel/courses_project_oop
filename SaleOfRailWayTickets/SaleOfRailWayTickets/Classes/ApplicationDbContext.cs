@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using lab4_5.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace lab4_5.Classes
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<TicketEssence> TicketsDbSet { get; set; }
+        public DbSet<TicketModel> TicketsDbSet { get; set; }
         public DbSet<UserModel> UsersDbSet { get; set; }
+        public DbSet<PurchasedTicketModel> PurchasedTicketsDbSet { get; set; }
 
 
         public ApplicationDbContext() : base() { }
@@ -24,11 +26,11 @@ namespace lab4_5.Classes
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<TicketEssence>().ToTable("Tickets");
+            modelBuilder.Entity<TicketModel>().ToTable("Tickets");
 
             modelBuilder.Entity<UserModel>().ToTable("Users");
 
-
+            modelBuilder.Entity<PurchasedTicketModel>().ToTable("PurchasedTickets");
         }
 
     }

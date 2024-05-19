@@ -23,22 +23,24 @@ namespace lab4_5.View
     public partial class ClientWindow : Window
     {
         public UserViewModel ViewModel { get; set; }    
+        public PurchasedTicketViewModel PurchaseTickets { get; set; }    
         public ClientWindow()
         {
             InitializeComponent();
             DataContext = new UserViewModel();
             ViewModel = (UserViewModel)DataContext;
-            MainFrame.Navigate(new Home(ViewModel));
+            PurchaseTickets = new PurchasedTicketViewModel();
+            MainFrame.Navigate(new Home(PurchaseTickets));
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Home(ViewModel));
+            MainFrame.Navigate(new Home(PurchaseTickets));
         }
 
         private void Schulde_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Schulde(ViewModel));
+            MainFrame.Navigate(new Schulde(PurchaseTickets));
         }
 
         private void Account_Click(object sender, RoutedEventArgs e)

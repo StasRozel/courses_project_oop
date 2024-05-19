@@ -11,6 +11,7 @@ namespace lab4_5.Classes
         private ApplicationDbContext context;
         private TicketRepository ticketRepository;
         private UserRepository userRepository;
+        private PurchasedTicketRepository purchasedTicketRepository;
 
         public UnitWorkContent(ApplicationDbContext context) 
         {
@@ -25,6 +26,11 @@ namespace lab4_5.Classes
         public UserRepository UserRepository
         {
             get { return userRepository ?? new UserRepository(context); }
+        }
+
+        public PurchasedTicketRepository PurchasedTicketRepository
+        {
+            get { return purchasedTicketRepository ?? new PurchasedTicketRepository(context); }
         }
     }
 }

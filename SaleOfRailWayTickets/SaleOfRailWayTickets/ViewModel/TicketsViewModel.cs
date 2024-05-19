@@ -18,9 +18,9 @@ namespace lab4_5
 {
     public partial class TicketsViewModel : INotifyPropertyChanged
     {
-        public TicketEssence selectedTicket;
+        public TicketModel selectedTicket;
 
-        public ObservableCollection<TicketEssence>? Tickets { get; set; }
+        public ObservableCollection<TicketModel>? Tickets { get; set; }
 
         public UnitWorkContent UnitWorkContent { get; set; }
 
@@ -47,11 +47,13 @@ namespace lab4_5
 
             string? ticketName = parameter as string;
             string[] ticketNameArr = ticketName.Split(',');
+            string[] nameWay = ticketNameArr[0].Split("-");
 
-            TicketEssence newTicket = new TicketEssence
+            TicketModel newTicket = new TicketModel
             {
                 Id = Tickets.Count() + 1,
-                NameWay = ticketNameArr[0],
+                From = nameWay[0],
+                To = nameWay[1],
                 Description = ticketNameArr[1],
                 NumberTrain = Convert.ToInt32(ticketNameArr[2]),
                 Price = Convert.ToDouble(ticketNameArr[3]),
@@ -76,11 +78,13 @@ namespace lab4_5
         {
             string? ticketName = parameter as string;
             string[] ticketNameArr = ticketName.Split(',');
+            string[] nameWay = ticketNameArr[0].Split("-");
 
-            TicketEssence newTicket = new TicketEssence
+            TicketModel newTicket = new TicketModel
             {
                 Id = Convert.ToInt32(ticketNameArr[0]),
-                NameWay = ticketNameArr[1],
+                From = nameWay[0],
+                To = nameWay[1],
                 Description = ticketNameArr[2],
                 NumberTrain = Convert.ToInt32(ticketNameArr[3]),
                 Price = Convert.ToDouble(ticketNameArr[4]),
@@ -104,7 +108,7 @@ namespace lab4_5
 
         private void DeleteTicket(object parameter)
         {
-            TicketEssence ticket = (TicketEssence)parameter;
+            TicketModel ticket = (TicketModel)parameter;
 
             Tickets?.Remove(ticket);
 
@@ -112,7 +116,7 @@ namespace lab4_5
 
         }
 
-        public TicketEssence SelectedTicket
+        public TicketModel SelectedTicket
         {
             get { return selectedTicket; }
             set
@@ -137,7 +141,7 @@ namespace lab4_5
         public TicketsViewModel()
         {
             UnitWorkContent = new UnitWorkContent(new ApplicationDbContext());
-            Tickets = new ObservableCollection<TicketEssence>(UnitWorkContent.TicketRepository.GetList());
+            Tickets = new ObservableCollection<TicketModel>(UnitWorkContent.TicketRepository.GetList());
         }
 
 
