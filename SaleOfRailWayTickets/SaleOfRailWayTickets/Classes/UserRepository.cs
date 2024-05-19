@@ -81,7 +81,28 @@ namespace lab4_5.Classes
 
         public void Update(UserModel item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (item != null)
+                {
+                    UserModel? existingUser = context.UsersDbSet.Find(App.session.AuthUser.Email);
+                    existingUser.FirstName = item.FirstName;
+                    existingUser.LastName = item.LastName;
+                    existingUser.Surname = item.Surname;
+                    existingUser.PasswordHash= item.PasswordHash;
+                    existingUser.Email = item.Email;
+                    existingUser.PhoneNumber = item.PhoneNumber;
+                    existingUser.IsAdmin = false;
+
+                    // Обновите другие свойства, которые нужно изменить
+                    context.UsersDbSet.Update(existingUser);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

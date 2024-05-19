@@ -19,6 +19,7 @@ CREATE TABLE Tickets (
 CREATE TABLE Users (
     FirstName NVARCHAR(50) NOT NULL,
     LastName NVARCHAR(50) NOT NULL,
+	Surname NVARCHAR(50) NOT NULL,
     Email NVARCHAR(100) NOT NULL PRIMARY KEY,
 	PasswordHash NVARCHAR(100) NOT NULL,
     PhoneNumber NVARCHAR(20) NULL,
@@ -26,8 +27,6 @@ CREATE TABLE Users (
 );
 
 SELECT * FROM Users;
-
-Delete from Users where LastName = 'Rozel'
 
 -- Таблица 3: PurchasedTickets (Купленные билеты)
 CREATE TABLE PurchasedTickets (

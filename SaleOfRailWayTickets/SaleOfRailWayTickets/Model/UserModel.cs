@@ -13,6 +13,7 @@ namespace lab4_5
     {
         private string? firstName;
         private string? lastName;
+        private string? surname;
         private string? passwordHash;
         private string? email;
         private string? phoneNumber;
@@ -35,6 +36,16 @@ namespace lab4_5
             { 
                 lastName = value;
                 OnPropertyChanged("LastName");
+            }
+        }
+
+        public string? Surname
+        {
+            get { return surname; }
+            set
+            {
+                surname = value;
+                OnPropertyChanged("Surname");
             }
         }
 

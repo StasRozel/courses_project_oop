@@ -1,4 +1,5 @@
-﻿using System;
+﻿using lab4_5.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace lab4_5.Pages
     /// </summary>
     public partial class Account : Page
     {
-        public Account()
+        public static Account account;
+
+        public Account(UserViewModel user)
         {
             InitializeComponent();
+            account = this;
+            DataContext = user;
         }
     }
 }

@@ -14,20 +14,21 @@ using System.Windows;
 using FluentValidation;
 using FluentValidation.Results;
 using lab4_5.Model;
+using Microsoft.IdentityModel.Tokens;
 
 namespace lab4_5.ViewModel
 {
     public class UserViewModel : INotifyPropertyChanged
     {
         private TicketModel selectedTicket;
-        
-        public ObservableCollection<TicketModel>? Tickets { get; set; }
-        public ObservableCollection<PurchasedTicketModel>? PurchaseTickets { get; set; }
+
+        public UserModel AuthUser { get; set; }
 
         public UnitWorkContent UnitWorkContent { get; set; }
 
         private TicketCommand registrationCommand;
         private TicketCommand authorizationCommand;
+        private TicketCommand saveConfigCommand;
        
 
         public TicketCommand RegistrationCommand
@@ -58,6 +59,7 @@ namespace lab4_5.ViewModel
                 {
                     FirstName = userNameArr[0],
                     LastName = userNameArr[1],
+                    Surname = "",
                     PasswordHash = PasswordHashing.Hash(userNameArr[2]),
                     Email = userNameArr[4],
                     PhoneNumber = "",
@@ -111,7 +113,40 @@ namespace lab4_5.ViewModel
             }
         }
 
-        
+        public TicketCommand SaveConfigCommand
+        {
+            get
+            {
+                return saveConfigCommand ??
+                  (saveConfigCommand = new TicketCommand(SaveConfigUser, canExecuteTicket));
+            }
+        }
+
+        private void SaveConfigUser(object parameter)
+        {
+            string firstName = Account.account.FirstName.Text;
+            string lastName = Account.account.LastName.Text;
+            string surname = Account.account.Surname.Text;
+            string email = Account.account.Email.Text;
+            string phoneNumber = Account.account.PhoneNumber.Text;
+
+            string oldPassword = Account.account.OldPassword.Text;
+            string newPassword = Account.account.NewPassword.Text;
+            string newPasswordDouble = Account.account.NewPasswordDouble.Text;
+
+            AuthUser.FirstName = firstName; AuthUser.LastName = lastName;
+            AuthUser.Surname = surname; AuthUser.Email = email;
+            AuthUser.PhoneNumber = phoneNumber;
+
+            if (!oldPassword.IsNullOrEmpty() && !newPassword.IsNullOrEmpty() && 
+                !newPasswordDouble.IsNullOrEmpty() && newPassword.Equals(newPasswordDouble))
+            {
+                AuthUser.PasswordHash = PasswordHashing.Hash(newPassword);
+            }
+
+            UnitWorkContent.UserRepository.Update(AuthUser);
+
+        }
 
         public TicketModel SelectedTicket
         {
@@ -132,6 +167,7 @@ namespace lab4_5.ViewModel
         public UserViewModel()
         {
             UnitWorkContent = new UnitWorkContent(new ApplicationDbContext());
+            AuthUser = App.session.AuthUser;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

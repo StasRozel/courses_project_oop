@@ -22,13 +22,13 @@ namespace lab4_5.View
     /// </summary>
     public partial class ClientWindow : Window
     {
-        public UserViewModel ViewModel { get; set; }    
+        public UserViewModel User { get; set; }    
         public PurchasedTicketViewModel PurchaseTickets { get; set; }    
         public ClientWindow()
         {
             InitializeComponent();
             DataContext = new UserViewModel();
-            ViewModel = (UserViewModel)DataContext;
+            User = (UserViewModel)DataContext;
             PurchaseTickets = new PurchasedTicketViewModel();
             MainFrame.Navigate(new Home(PurchaseTickets));
         }
@@ -47,7 +47,7 @@ namespace lab4_5.View
         {
             Uri imageUri = new Uri("pack://application:,,,/Resources/img/background_account.png", UriKind.Absolute);
             //BackgroundImg.ImageSource = imageUri;
-            MainFrame.Navigate(new Account());
+            MainFrame.Navigate(new Account(User));
         }
     }
 }
