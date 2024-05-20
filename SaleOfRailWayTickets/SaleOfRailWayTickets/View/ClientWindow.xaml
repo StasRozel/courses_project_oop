@@ -19,24 +19,37 @@
         <Frame x:Name="MainFrame" Grid.Row="0" NavigationUIVisibility="Hidden"></Frame>
 
         <Rectangle  Grid.Row="1" Fill="#FF9800" />
-        <DockPanel Grid.Row="1" Margin="115 0">
-            <Button x:Name="Home" DockPanel.Dock="Left" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Home_Click">
+        <Grid Grid.Row="1" Margin="10 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="25*" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Home"  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Home_Click">
                 <StackPanel Orientation="Horizontal" Cursor="">
                     <Image Source="/Resources/img/home.png" Width="18" Height="20"/>
                 </StackPanel>
             </Button>
-            
-            <Button x:Name="Account" DockPanel.Dock="Right" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Account_Click">
+
+            <Button x:Name="Schulde"  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Status_Click">
                 <StackPanel Orientation="Horizontal" Cursor="">
-                    <Image Source="/Resources/img/account.png" Width="18" Height="20"/>
+                    <Image Source="/Resources/img/ticket.png" Width="18" Height="20"/>
                 </StackPanel>
             </Button>
-            
-            <Button x:Name="Schulde"  Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Schulde_Click">
+
+            <Button x:Name="StatusTickets" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Schulde_Click">
                 <StackPanel Orientation="Horizontal" Cursor="">
                     <Image Source="/Resources/img/schulde.png" Width="18" Height="20"/>
                 </StackPanel>
             </Button>
-        </DockPanel>
+
+            <Button x:Name="Account" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Account_Click">
+                <StackPanel Orientation="Horizontal" Cursor="">
+                    <Image Source="/Resources/img/account.png" Width="18" Height="20"/>
+                </StackPanel>
+            </Button>
+        </Grid>
     </Grid>
 </Window>

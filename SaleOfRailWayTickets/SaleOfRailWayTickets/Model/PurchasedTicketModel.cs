@@ -18,6 +18,7 @@ namespace lab4_5.Model
         private TimeSpan purchaseTime;
         private double price;
         private int numberTrain;
+        private int status;
         private string? type;
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -115,6 +116,16 @@ namespace lab4_5.Model
         public string? Img
         {
             get { return $"/Resources/img/{Type}.png"; }
+        }
+
+        public int Status 
+        {
+            get { return status; }
+            set
+            {
+                status = value;
+                OnPropertyChanged(nameof(Status));
+            }
         }
 
         private void OnPropertyChanged(string propertyName)

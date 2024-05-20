@@ -31,11 +31,17 @@ namespace lab4_5.View
             User = (UserViewModel)DataContext;
             PurchaseTickets = new PurchasedTicketViewModel();
             MainFrame.Navigate(new Home(PurchaseTickets));
+            PurchaseTickets.StartTimer();
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Home(PurchaseTickets));
+        }
+
+        private void Status_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new StatusTickets(PurchaseTickets));
         }
 
         private void Schulde_Click(object sender, RoutedEventArgs e)

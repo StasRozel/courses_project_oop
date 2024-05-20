@@ -22,6 +22,9 @@
     <Compile Update="Pages\Schulde.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\StatusTickets.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\SuccessfulPurchase.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -58,6 +61,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Schulde.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\StatusTickets.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SuccessfulPurchase.xaml">

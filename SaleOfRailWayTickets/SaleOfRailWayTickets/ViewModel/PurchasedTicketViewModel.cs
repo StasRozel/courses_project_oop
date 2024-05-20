@@ -13,22 +13,44 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace lab4_5.ViewModel
 {
     public class PurchasedTicketViewModel : INotifyPropertyChanged
     {
+        private static Timer? timerExpectedCheck;
+        private static Timer? timerActivityCheck;
+
         public TicketModel? selectedTicket;
 
         public ObservableCollection<TicketModel>? Tickets { get; set; }
         public ObservableCollection<PurchasedTicketModel>? PurchaseTickets { get; set; }
         public ObservableCollection<PurchasedTicketModel>? PurchaseTicketsDisplay { get; set; }
 
+        public ObservableCollection<PurchasedTicketModel>? ExpectedTickets { get; set; }
+        public ObservableCollection<PurchasedTicketModel>? ActiveTickets { get; set; }
+        public ObservableCollection<PurchasedTicketModel>? DeactiveTickets { get; set; }
+
         private TicketModel buffSelectedTicket;
+
         private TicketCommand orderCommand;
         private TicketCommand paymentCommand;
 
         public UnitWorkContent UnitWorkContent { get; set; }
+
+        public PurchasedTicketViewModel()
+        {
+            UnitWorkContent = new UnitWorkContent(new ApplicationDbContext());
+
+            PurchaseTicketsDisplay = new ObservableCollection<PurchasedTicketModel>(UnitWorkContent.PurchasedTicketRepository.GetList().Where(t => t.EmailUser == App.session.AuthUser.Email));
+
+            ExpectedTickets = new ObservableCollection<PurchasedTicketModel>(PurchaseTicketsDisplay);
+            ActiveTickets = new ObservableCollection<PurchasedTicketModel>();
+            DeactiveTickets = new ObservableCollection<PurchasedTicketModel>();
+
+            Tickets = new ObservableCollection<TicketModel>(UnitWorkContent.TicketRepository.GetList());
+        }
 
 
         public TicketCommand OrderCommand
@@ -136,6 +158,76 @@ namespace lab4_5.ViewModel
             }
         }
 
+
+        public void StartTimer()
+        {
+            timerExpectedCheck = new Timer(
+                                callback: (state) => { CheckTimeExpectedTicket();  if (ActiveTickets?.Count() != 0) CheckTimeActiveTicket(); }, 
+                                state: null, 
+                                dueTime: 10000, 
+                                period: 10000);
+        }
+
+        private void CheckTimeActiveTicket()
+        {
+            
+            timerActivityCheck = new Timer(callback: (state) => ActiveToDeactive(state), state: ActiveTickets?.First(), dueTime: 30000, period: Timeout.Infinite);
+        }
+
+
+        public void ActiveToDeactive(object ticket)
+        {
+            if (ticket == null) return;
+
+            PurchasedTicketModel? ticketModel = ticket as PurchasedTicketModel;
+            // Код, который нужно выполнить, когда текущее время превышает целевое время
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                if (ticketModel != null)
+                    ActiveTickets?.Remove(ticketModel);
+            });
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                if (ticketModel != null)
+                    DeactiveTickets?.Add(ticketModel);
+            });
+
+        }
+
+
+        private void CheckTimeExpectedTicket()
+        {
+            DateTime currentTime = DateTime.Now;
+            string timeString = currentTime.ToString("T");
+
+            // Проверяем, превышает ли текущее время целевое время
+            foreach (var ticket in new List<PurchasedTicketModel>(ExpectedTickets))
+            {
+                if (TimeSpan.Parse(timeString) >= ticket.PurchaseTime)
+                {
+                    DoSomething(ticket);
+
+                    if (ExpectedTickets.Count() == 0)
+                        timerExpectedCheck?.Dispose();
+                    
+                }
+            }
+        }
+
+
+        public void DoSomething(PurchasedTicketModel ticket)
+        {
+            // Код, который нужно выполнить, когда текущее время превышает целевое время
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                ExpectedTickets?.Remove(ticket);
+            });
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                ActiveTickets?.Add(ticket);
+            });
+        }
+
         public TicketModel SelectedTicket
         {
             get { return selectedTicket; }
@@ -144,8 +236,6 @@ namespace lab4_5.ViewModel
                 selectedTicket = value;
                 if (SelectedTicket != null)
                 {
-                    //ClientWindow? window = App.Current.MainWindow as ClientWindow;
-
                     App.session.clientWindow?.MainFrame.Navigate(new OrderTicket(new PurchasedTicketViewModel(SelectedTicket, App.session.AuthUser)));
                 }
                 OnPropertyChanged("SelectedTicket");
@@ -162,13 +252,6 @@ namespace lab4_5.ViewModel
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public PurchasedTicketViewModel()
-        {
-            UnitWorkContent = new UnitWorkContent(new ApplicationDbContext());
-            
-            PurchaseTicketsDisplay = new ObservableCollection<PurchasedTicketModel>(UnitWorkContent.PurchasedTicketRepository.GetList().Where(t => t.EmailUser == App.session.AuthUser.Email));
-            Tickets = new ObservableCollection<TicketModel>(UnitWorkContent.TicketRepository.GetList());
-        }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

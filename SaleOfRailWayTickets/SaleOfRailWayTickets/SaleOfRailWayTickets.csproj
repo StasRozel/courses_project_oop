@@ -41,6 +41,7 @@
     <None Remove="Resources\img\schulde.png" />
     <None Remove="Resources\img\successful.png" />
     <None Remove="Resources\img\themes.png" />
+    <None Remove="Resources\img\ticket.png" />
     <None Remove="Resources\img\train.png" />
     <None Remove="Resources\img\translate.png" />
     <None Remove="Resources\img\_arrow.cur" />
@@ -82,6 +83,7 @@
     <Resource Include="Resources\img\schulde.png" />
     <Resource Include="Resources\img\successful.png" />
     <Resource Include="Resources\img\themes.png" />
+    <Resource Include="Resources\img\ticket.png" />
     <Resource Include="Resources\img\train.png" />
     <Resource Include="Resources\img\translate.png" />
     <Resource Include="Resources\img\_arrow.cur" />

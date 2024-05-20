@@ -510,3 +510,5 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\SaleOfRailWayTickets.genruntimeconfig.cache
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\SaleOfRailWayTickets.pdb
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\ref\SaleOfRailWayTickets.dll
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\StatusTickets.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\StatusTickets.baml
