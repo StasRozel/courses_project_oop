@@ -142,6 +142,9 @@ namespace lab4_5.ViewModel
                 !newPasswordDouble.IsNullOrEmpty() && newPassword.Equals(newPasswordDouble))
             {
                 AuthUser.PasswordHash = PasswordHashing.Hash(newPassword);
+            } else
+            {
+                MessageBox.Show("Неверный нынешний пароль");
             }
 
             UnitWorkContent.UserRepository.Update(AuthUser);

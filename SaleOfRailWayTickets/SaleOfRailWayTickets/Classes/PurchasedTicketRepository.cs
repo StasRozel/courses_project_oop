@@ -55,7 +55,28 @@ namespace lab4_5.Classes
 
         public void Update(PurchasedTicketModel item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (item != null)
+                {
+                    PurchasedTicketModel? existingTicket = context.PurchasedTicketsDbSet.Find(item.PurchaseId);
+                    existingTicket.From = item.From;
+                    existingTicket.To = item.To;
+                    existingTicket.PurchaseTime = item.PurchaseTime;
+                    existingTicket.Price = item.Price;
+                    existingTicket.Status = item.Status;
+                    existingTicket.NumberTrain = item.NumberTrain;
+                    existingTicket.Type = item.Type;
+
+                    // Обновите другие свойства, которые нужно изменить
+                    context.PurchasedTicketsDbSet.Update(existingTicket);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

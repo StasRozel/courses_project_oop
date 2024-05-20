@@ -308,15 +308,11 @@ C:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_
 C:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\SaleOfRailWayTickets.pdb
 C:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\SaleOfRailWayTickets.genruntimeconfig.cache
 C:\Users\rozel\OneDrive - УО БГТУ\Универ\2 курс\courses_project_oop-master\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\ref\SaleOfRailWayTickets.dll
-E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\SaleOfRailWayTickets.dll
-E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.dll
-E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
-E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
-E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\SaleOfRailWayTickets.exe
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\SaleOfRailWayTickets.deps.json
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\SaleOfRailWayTickets.runtimeconfig.json
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\SaleOfRailWayTickets.dll
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\SaleOfRailWayTickets.pdb
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Azure.Core.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Azure.Identity.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\DefaultUnDo.dll
@@ -331,6 +327,7 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\MaterialDesignThemes.Wpf.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.dll
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
@@ -363,6 +360,7 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Mono.TextTemplating.dll
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\System.Composition.AttributedModel.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\System.Composition.Convention.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\System.Composition.Hosting.dll
@@ -410,6 +408,7 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
@@ -436,6 +435,7 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\es\Microsoft.Data.SqlClient.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\it\Microsoft.Data.SqlClient.resources.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
@@ -447,6 +447,7 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
@@ -467,6 +468,7 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\OrderTicket.g.cs
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\PaymentByCard.g.cs
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Schulde.g.cs
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\StatusTickets.g.cs
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\SuccessfulPurchase.g.cs
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Resources\UserControl\HeaderTableTickets.g.cs
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\View\AddTicket.g.cs
@@ -487,6 +489,7 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\OrderTicket.baml
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\PaymentByCard.baml
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\Schulde.baml
+E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\StatusTickets.baml
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\SuccessfulPurchase.baml
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Resources\UserControl\HeaderTableTickets.baml
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\View\AddTicket.baml
@@ -508,7 +511,4 @@ E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWa
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\refint\SaleOfRailWayTickets.dll
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\SaleOfRailWayTickets.pdb
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\SaleOfRailWayTickets.genruntimeconfig.cache
-E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\bin\Debug\net8.0-windows\SaleOfRailWayTickets.pdb
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\ref\SaleOfRailWayTickets.dll
-E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\StatusTickets.g.cs
-E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\obj\Debug\net8.0-windows\Pages\StatusTickets.baml
