@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.ComponentModel.DataAnnotations;
 
 namespace lab4_5
 {
@@ -17,7 +18,7 @@ namespace lab4_5
         private double price;
         private int numberTrain;
         private string description;
-        private string type;
+        private string type;      
 
         public int Id
         {
@@ -29,6 +30,9 @@ namespace lab4_5
             }
         }
 
+        [Required(ErrorMessage = "Поле 'Откуда' обязательно для заполнения")]
+        [StringLength(100, ErrorMessage = "Поле 'Откуда' должно содержать не более 100 символов")]
+        [RegularExpression(@"^[a-zA-ZА-Яа-я]+$", ErrorMessage = "Поле 'Откуда' должно содержать только буквы и цифры")]
         public string? From
         {
             get { return from; }
@@ -39,6 +43,9 @@ namespace lab4_5
             }
         }
 
+        [Required(ErrorMessage = "Поле 'Куда' обязательно для заполнения")]
+        [StringLength(100, ErrorMessage = "Поле 'Куда' должно содержать не более 100 символов")]
+        [RegularExpression(@"^[a-zA-ZА-Яа-я]+$", ErrorMessage = "Поле 'Куда' должно содержать только буквы и цифры")]
         public string? To
         {
             get { return to; }
@@ -49,53 +56,63 @@ namespace lab4_5
             }
         }
 
+        [Required(ErrorMessage = "Поле 'Время' обязательно для заполнения")]
         public TimeSpan Time
         {
             get { return time; }
             set
             {
                 time = value;
-                OnPropertyChanged("Time");
+                OnPropertyChanged(nameof(Time));
             }
         }
 
+        [Required(ErrorMessage = "Поле 'Цена' обязательно для заполнения")]
+        [Range(0, double.MaxValue, ErrorMessage = "Поле 'Цена' должно быть положительным числом")]
         public double Price
         {
             get { return price; }
             set
             {
                 price = value;
-                OnPropertyChanged("Price");
+                OnPropertyChanged(nameof(Price));
             }
         }
 
+        [Required(ErrorMessage = "Поле 'Номер поезда' обязательно для заполнения")]
+        [Range(1, int.MaxValue, ErrorMessage = "Поле 'Номер поезда' должно быть положительным числом")]
         public int NumberTrain
         {
             get { return numberTrain; }
             set
             {
                 numberTrain = value;
-                OnPropertyChanged("NumberTrain");
+                OnPropertyChanged(nameof(NumberTrain));
             }
         }
 
+        [StringLength(500, ErrorMessage = "Описание должно содержать не более 500 символов")]
+        [RegularExpression(@"^[a-zA-ZА-Яа-я]+$", ErrorMessage = "Описание должно содержать только буквы и цифры")]
         public string Description
         {
             get { return description; }
             set
             {
                 description = value;
-                OnPropertyChanged("Description");
+                OnPropertyChanged(nameof(Description));
             }
         }
 
+        [Required(ErrorMessage = "Поле 'Тип' обязательно для заполнения")]
+        [StringLength(100, ErrorMessage = "Поле 'Тип' должно содержать не более 100 символов")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Поле 'Тип' должно содержать только буквы и цифры")]
         public string Type
         {
             get { return type; }
             set
             {
                 type = value;
-                OnPropertyChanged("Type");
+                OnPropertyChanged(nameof(Type));
             }
         }
 

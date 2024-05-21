@@ -27,8 +27,9 @@ namespace lab4_5
         {
             InitializeComponent();
 
-            DataContext = new TicketsViewModel();
-            ViewModel = (TicketsViewModel)DataContext;
+            ViewModel = new TicketsViewModel();
+            DataContext = ViewModel;
+           
             //App.LanguageChanged += LanguageChanged;
 
         }

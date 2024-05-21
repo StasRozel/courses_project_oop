@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 E:\Универ\2 курс\courses_project_oop\SaleOfRailWayTickets\SaleOfRailWayTickets\App.xaml
-191209334410
+20-531858478
 1547579641
-39-1511566183
+401669672913
 248-649458748
-Pages\Account.xaml;Pages\BadPurchase.xaml;Pages\Home.xaml;Pages\OrderTicket.xaml;Pages\PaymentByCard.xaml;Pages\Schulde.xaml;Pages\StatusTickets.xaml;Pages\SuccessfulPurchase.xaml;Resources\Lang\lang.en-US.xaml;Resources\Lang\lang.xaml;Resources\Theme\PurpurTheme.xaml;Resources\Theme\SkyTheme.xaml;Resources\UserControl\HeaderTableTickets.xaml;View\AddTicket.xaml;View\AdminPanel.xaml;View\Authorization.xaml;View\ClientWindow.xaml;View\InfoTicket.xaml;View\Registration.xaml;
+Pages\Account.xaml;Pages\BadPurchase.xaml;Pages\Home.xaml;Pages\OrderTicket.xaml;Pages\PaymentByCard.xaml;Pages\Schulde.xaml;Pages\StatusTickets.xaml;Pages\SuccessfulPurchase.xaml;Resources\Lang\lang.en-US.xaml;Resources\Lang\lang.xaml;Resources\Theme\PurpurTheme.xaml;Resources\Theme\SkyTheme.xaml;Resources\UserControl\HeaderTableTickets.xaml;View\AddTicket.xaml;View\AdminPanel.xaml;View\Authorization.xaml;View\ClientWindow.xaml;View\HistoryOrderTickets.xaml;View\InfoTicket.xaml;View\Registration.xaml;
 
-False
+True
 

@@ -37,6 +37,9 @@
     <Compile Update="View\ClientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\HistoryOrderTickets.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\InfoTicket.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,6 +91,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ClientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\HistoryOrderTickets.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\InfoTicket.xaml">

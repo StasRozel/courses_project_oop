@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -48,6 +49,7 @@ namespace lab4_5
             string? ticketName = parameter as string;
             string[] ticketNameArr = ticketName.Split(',');
             string[] nameWay = ticketNameArr[0].Split("-");
+            string errorStr = string.Empty;
 
             TicketModel newTicket = new TicketModel
             {
@@ -60,9 +62,24 @@ namespace lab4_5
                 Time = TimeSpan.Parse(ticketNameArr[4]),
                 Type = Convert.ToBoolean(ticketNameArr[5]) ? "train" : "electric"
             };
-            Tickets.Add(newTicket);
 
-            UnitWorkContent.TicketRepository.Create(newTicket);
+            var results = new List<ValidationResult>();
+            var context = new ValidationContext(newTicket);
+            if (!Validator.TryValidateObject(newTicket, context, results, true))
+            {
+                foreach (var error in results)
+                {
+                    errorStr += error.ErrorMessage + '\n';
+                }
+                MessageBox.Show(errorStr);
+            }
+            else
+            {
+                Tickets.Add(newTicket);
+
+                UnitWorkContent.TicketRepository.Create(newTicket);
+            }
+                
         }
 
         public TicketCommand ChangeCommand
@@ -79,6 +96,7 @@ namespace lab4_5
             string? ticketName = parameter as string;
             string[] ticketNameArr = ticketName.Split(',');
             string[] nameWay = ticketNameArr[0].Split("-");
+            string errorStr = string.Empty;
 
             TicketModel newTicket = new TicketModel
             {
@@ -93,7 +111,21 @@ namespace lab4_5
             };
             //Tickets[SelectedTicket.Id - 1] = newTicket;
 
-             UnitWorkContent.TicketRepository.Update(newTicket);
+            var results = new List<ValidationResult>();
+            var context = new ValidationContext(newTicket);
+            if (!Validator.TryValidateObject(newTicket, context, results, true))
+            {
+                foreach (var error in results)
+                {
+                    errorStr += error.ErrorMessage + '\n';
+                }
+                MessageBox.Show(errorStr);
+            }
+            else
+            {
+                UnitWorkContent.TicketRepository.Update(newTicket);
+            }
+
 
         }
 

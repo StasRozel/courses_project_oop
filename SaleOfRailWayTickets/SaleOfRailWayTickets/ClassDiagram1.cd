@@ -1,2 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="lab4_5.Classes.ApplicationDbContext">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAEBABAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ApplicationDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="lab4_5.Classes.PurchasedTicketRepository">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAACAAAABAAAAAAAAAAAEAAEAAAAAAAAAAAAI=</HashCode>
+      <FileName>Classes\PurchasedTicketRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="lab4_5.Classes.TicketRepository">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAACAAAABAAAAAAAAAAAEAAEAAAAAAAAAAAAI=</HashCode>
+      <FileName>Classes\TicketRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="lab4_5.Classes.UnitWorkContent">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEACBAAAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Classes\UnitWorkContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

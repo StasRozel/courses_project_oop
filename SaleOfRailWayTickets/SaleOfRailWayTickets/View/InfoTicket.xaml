@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:lab4_5" xmlns:xctk="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:lab4_5" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d" Cursor="{StaticResource customCursor}"
         Title="Информация о билете" Height="450" Width="800" Background="#FFF4CF">
     <Grid>
@@ -15,19 +15,19 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="60*"></RowDefinition>
+            <RowDefinition Height="40*"></RowDefinition>
         </Grid.RowDefinitions>
 
 
         <StackPanel Grid.Row="0" Grid.Column="0">
-            <TextBox x:Name="ChangeNameWay" Text="{Binding Path=SelectedTicket.NameWay}" Margin="5" FontSize="28"/>
+            <xctk:WatermarkTextBox x:Name="ChangeNameWay" Text="{Binding Path=SelectedTicket.NameWay}" Margin="5" FontSize="28" Style="{DynamicResource CustomTextBox}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1">
-            <TextBox x:Name="ChangeNumberTrain" Text="{Binding Path=SelectedTicket.NumberTrain}" Margin="5" FontSize="20"/>
-            <TextBox x:Name="ChangePrice" Text="{Binding Path=SelectedTicket.Price}" Margin="5" FontSize="20"/>
-            <TextBox x:Name="TicketTimePicker" Text="{Binding Path=SelectedTicket.Time}" Margin="5" FontSize="20"/>
+            <xctk:WatermarkTextBox x:Name="ChangeNumberTrain" Text="{Binding Path=SelectedTicket.NumberTrain}" Margin="5" FontSize="20" Style="{DynamicResource CustomTextBox}"/>
+            <xctk:WatermarkTextBox x:Name="ChangePrice" Text="{Binding Path=SelectedTicket.Price}" Margin="5" FontSize="20" Style="{DynamicResource CustomTextBox}"/>
+            <xctk:WatermarkTextBox x:Name="TicketTimePicker" Text="{Binding Path=SelectedTicket.Time}" Margin="5" FontSize="20" Style="{DynamicResource CustomTextBox}"/>
             <StackPanel>
                 <RadioButton x:Name="Train" Content="Поезд" IsChecked="True" Margin="5"/>
                 <RadioButton x:Name="Electric" Content="Электричка" Margin="5"/>
@@ -35,7 +35,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
-            <TextBox x:Name="ChangeDescription" Text="{Binding Path=SelectedTicket.Description}" FontSize="20" TextWrapping="Wrap" Width="783"/>
+            <xctk:WatermarkTextBox x:Name="ChangeDescription" Text="{Binding Path=SelectedTicket.Description}" FontSize="20" TextWrapping="Wrap" Width="783" Style="{DynamicResource CustomTextBox}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="3">
