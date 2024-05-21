@@ -8,6 +8,10 @@
       d:DesignHeight="1080" d:DesignWidth="1440"
       Title="Account">
     <Page.Resources>
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontSize" Value="22" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -88,14 +92,14 @@
             </Grid>
         </Grid>
         <TextBlock Grid.Row="2" Text="Изменение пароля" FontSize="36" Foreground="#fff" Margin="60 0"/>
-        
+
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100*" />
                 <ColumnDefinition Width="100*" />
                 <ColumnDefinition Width="100*" />
             </Grid.ColumnDefinitions>
-            
+
             <Grid Width="350" Height="80" Grid.Row="1" Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25*" />
@@ -103,7 +107,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Старый пароль" />
-                <TextBox x:Name="OldPassword" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+                <PasswordBox x:Name="OldPassword" Grid.Row="1" Width="350" Background="#fff" Margin="0,0,0,20"/>
             </Grid>
 
             <Grid Width="350" Height="80" Grid.Row="1" Grid.Column="1">
@@ -113,7 +117,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Новый пароль" />
-                <TextBox x:Name="NewPassword" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+                <PasswordBox x:Name="NewPassword" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
             </Grid>
 
             <Grid Width="350" Height="80" Grid.Row="0" Grid.Column="2">
@@ -123,7 +127,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Повторите новый пароль" />
-                <TextBox x:Name="NewPasswordDouble" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
+                <PasswordBox x:Name="NewPasswordDouble" Grid.Row="1" Width="350" Height="40" Background="#fff" VerticalAlignment="Top"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="4">

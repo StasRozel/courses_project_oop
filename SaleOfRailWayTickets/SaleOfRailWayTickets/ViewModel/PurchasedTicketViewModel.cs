@@ -12,8 +12,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Threading;
 
 namespace lab4_5.ViewModel
@@ -37,6 +39,8 @@ namespace lab4_5.ViewModel
 
         private TicketCommand orderCommand;
         private TicketCommand paymentCommand;
+
+        private TicketCommand searchCommand;
 
         public UnitWorkContent UnitWorkContent { get; set; }
 
@@ -71,7 +75,7 @@ namespace lab4_5.ViewModel
 
             ValidatorFormOrder<FormOrder> validator = new ValidatorFormOrder<FormOrder>();
 
-            ValidationResult results = validator.Validate(formOrder);
+            FluentValidation.Results.ValidationResult results = validator.Validate(formOrder);
 
             if (!results.IsValid)
             {
@@ -111,7 +115,7 @@ namespace lab4_5.ViewModel
 
             ValidatorFormPayment<FormPayment> validator = new ValidatorFormPayment<FormPayment>();
 
-            ValidationResult results = validator.Validate(formPayment);
+            FluentValidation.Results.ValidationResult results = validator.Validate(formPayment);
 
             if (!results.IsValid)
             {
@@ -145,18 +149,73 @@ namespace lab4_5.ViewModel
             }
         }
 
+        public TicketCommand SearchCommand
+        {
+            get
+            {
+                return searchCommand ??
+                  (searchCommand = new TicketCommand(Search, canExecuteTicket));
+            }
+        }
+
+        private void Search(object parametr)
+        {
+            Home? home = App.session.clientWindow.MainFrame.Content as Home;
+            string buff = home.SearchTime.Text == "" ? "00:00:00" : home.SearchTime.Text;
+            FormSearch search = new FormSearch
+            {
+                from = home.SearchFrom.Text,
+                to = home.SearchWhere.Text,
+                time = buff
+            };
+
+            ValidatorFormSearch<FormSearch> validator = new ValidatorFormSearch<FormSearch>();
+
+            FluentValidation.Results.ValidationResult results = validator.Validate(search);
+
+            string errorStr = string.Empty;
+            TimeSpan time = TimeSpan.Parse(buff);
+
+            if (!results.IsValid)
+            {
+                foreach (var failure in results.Errors)
+                {
+                    errorStr += "Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage + '\n';
+                }
+                MessageBox.Show(errorStr);
+            }
+            else
+            {
+                List<TicketModel>? ticketModels = new List<TicketModel>(UnitWorkContent.TicketRepository.GetList());
+
+                string regexPattern = $"{Regex.Escape(search.from)}";
+
+                ticketModels = ticketModels?.Where(s => Regex.IsMatch(s.From, regexPattern)).ToList();
+
+                if (search.to != "")
+                    ticketModels = ticketModels?.Where(s => search.to.Equals(s.To)).ToList();
+
+                if (time != TimeSpan.Parse("00:00:00"))
+                    ticketModels = ticketModels?.Where(s => time.Equals(s.Time)).ToList();
+
+                App.session.clientWindow.PurchaseTickets.Tickets = new ObservableCollection<TicketModel>(ticketModels);
+            }
+
+                
+        }
+
         public void StartTimer()
         {
             timerExpectedCheck = new Timer(
-                                callback: (state) => { CheckTimeExpectedTicket();  if (ActiveTickets?.Count() != 0) CheckTimeActiveTicket(); }, 
-                                state: null, 
-                                dueTime: 60000, 
+                                callback: (state) => { CheckTimeExpectedTicket(); if (ActiveTickets?.Count() != 0) CheckTimeActiveTicket(); },
+                                state: null,
+                                dueTime: 60000,
                                 period: 60000);
         }
 
         private void CheckTimeActiveTicket()
         {
-            
+
             timerActivityCheck = new Timer(callback: ActiveToDeactive, state: null, dueTime: 60000, period: 60000);
         }
 
@@ -211,7 +270,7 @@ namespace lab4_5.ViewModel
 
                     if (ExpectedTickets.Count() == 0)
                         timerExpectedCheck?.Dispose();
-                    
+
                 }
             }
         }
@@ -219,7 +278,7 @@ namespace lab4_5.ViewModel
 
         public void DoSomething(PurchasedTicketModel ticket)
         {
-        
+
             Application.Current.Dispatcher.Invoke(() =>
             {
                 ExpectedTickets?.Remove(ticket);

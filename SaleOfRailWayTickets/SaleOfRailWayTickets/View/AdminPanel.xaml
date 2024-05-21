@@ -36,21 +36,19 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Rectangle Style="{DynamicResource ColorRectangle}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" />
 
                 <Button Content="{DynamicResource m_HeaderMenuAddTicket}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Open_Click"/>
                 <Button Content="{DynamicResource m_HeaderMenuViewBuyTicket}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Button Content="{DynamicResource m_HeaderMenuButton}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                <Button x:Name="ChangeTheme" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ThemeChange_Click">
+                
+                <Button x:Name="ChangeTheme" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ThemeChange_Click">
                     <StackPanel Orientation="Horizontal" Cursor="">
                         <Image Source="/Resources/img/themes.png" Width="18" Height="20" />
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="ChangeLang" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Click="LanguageChange_Click">
+                <Button x:Name="ChangeLang" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="LanguageChange_Click">
                     <StackPanel Orientation="Horizontal" Cursor="">
                         <Image Source="/Resources/img/translate.png" Width="20" Height="20"/>
                     </StackPanel>
@@ -125,7 +123,8 @@
                             <Grid Width="1140">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30*"></ColumnDefinition>
-                                    <ColumnDefinition Width="200*"></ColumnDefinition>
+                                    <ColumnDefinition Width="150*"></ColumnDefinition>
+                                    <ColumnDefinition Width="150*"></ColumnDefinition>
                                     <ColumnDefinition Width="100*"></ColumnDefinition>
                                     <ColumnDefinition Width="40*"></ColumnDefinition>
                                     <ColumnDefinition Width="50*"></ColumnDefinition>
@@ -134,11 +133,11 @@
 
                                 <TextBlock Grid.Column="0" FontSize="18" Text="{Binding Path=Id}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 <TextBlock Grid.Column="1" FontSize="18" Text="{Binding Path=From}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                <TextBlock Grid.Column="1" FontSize="18" Text="{Binding Path=To}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                <TextBlock Grid.Column="2" FontSize="18" Text="{Binding Path=Time}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                <TextBlock Grid.Column="3" FontSize="18" Text="{Binding Path=Price}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                <TextBlock Grid.Column="4" FontSize="18" Text="{Binding Path=NumberTrain}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                <Image Grid.Column="5" Source="{Binding Path=Img}" Stretch="Uniform" Width="30" Height="30"/>
+                                <TextBlock Grid.Column="2" FontSize="18" Text="{Binding Path=To}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="3" FontSize="18" Text="{Binding Path=Time}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="4" FontSize="18" Text="{Binding Path=Price}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="5" FontSize="18" Text="{Binding Path=NumberTrain}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Image Grid.Column="6" Source="{Binding Path=Img}" Stretch="Uniform" Width="30" Height="30"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

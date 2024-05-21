@@ -12,9 +12,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using FluentValidation;
-using FluentValidation.Results;
 using lab4_5.Model;
 using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace lab4_5.ViewModel
 {
@@ -23,6 +24,7 @@ namespace lab4_5.ViewModel
         private TicketModel selectedTicket;
 
         public UserModel AuthUser { get; set; }
+
 
         public UnitWorkContent UnitWorkContent { get; set; }
 
@@ -49,9 +51,10 @@ namespace lab4_5.ViewModel
         {
             string? ticketName = parameter as string;
             string[] userNameArr = ticketName.Split(',');
+            string errorStr = string.Empty;
 
-            int pass = Convert.ToInt32(userNameArr[2]);
-            int passDoub = Convert.ToInt32(userNameArr[3]);
+            string pass = userNameArr[2];
+            string passDoub =userNameArr[3];
 
             if (pass == passDoub)
             {
@@ -64,17 +67,40 @@ namespace lab4_5.ViewModel
                     Email = userNameArr[4],
                     PhoneNumber = "",
                     IsAdmin = false,
-
                 };
 
-                UnitWorkContent.UserRepository.Registration(newUser);
+                var results = new List<ValidationResult>();
+                var context = new ValidationContext(newUser);
+                if (!Validator.TryValidateObject(newUser, context, results, true))
+                {
+                    foreach (var error in results)
+                    {
+                        errorStr += error.ErrorMessage+'\n';
+                    }
+                    MessageBox.Show(errorStr);
+                } else
+                {
+                    var users = UnitWorkContent.UserRepository.GetList().Where(u => u.Email.Equals(newUser.Email));
 
-                App.session.AuthUser = newUser;
+                    if (users == null)
+                    {
+                        UnitWorkContent.UserRepository.Registration(newUser);
 
-                ClientWindow clientWindow = new ClientWindow();
-                App.session.clientWindow = clientWindow;
-                clientWindow.Show();
-                Registration.registration.Close();
+                        App.session.AuthUser = newUser;
+
+                        ClientWindow clientWindow = new ClientWindow();
+                        App.session.clientWindow = clientWindow;
+                        clientWindow.Show();
+                        Registration.registration.Close();
+                    }  else
+                    {
+                        MessageBox.Show("Такая почта уже используется");
+                    }
+
+                    
+                }
+
+                
             } else
             {
                 MessageBox.Show("Пароли должны совпадать!");
@@ -92,25 +118,49 @@ namespace lab4_5.ViewModel
 
         private void AuthorizationUser(object parameter)
         {
-            string email = Authorization.authorization.Email.Text;
-            string password = Authorization.authorization.Password.Password;
-
-            UserModel? authUser = UnitWorkContent.UserRepository.Authorization(PasswordHashing.Hash(password), email);
-
-            App.session.AuthUser = authUser;
-
-            if (authUser?.IsAdmin == true)
+            FormLogIn logIn = new FormLogIn
             {
-                AdminPanel adminPanel = new AdminPanel();
-                adminPanel.Show();
-                Authorization.authorization.Close();
-            } else if (authUser?.IsAdmin == false)
+                email = Authorization.authorization.Email.Text,
+                password = Authorization.authorization.Password.Password
+            };
+
+            ValidatorFormLogIn<FormLogIn> validator = new ValidatorFormLogIn<FormLogIn>();
+
+            FluentValidation.Results.ValidationResult results = validator.Validate(logIn);
+
+            string errorStr = string.Empty;
+
+            if (!results.IsValid)
             {
-                ClientWindow clientWindow = new ClientWindow();
-                App.session.clientWindow = clientWindow;
-                clientWindow.Show();
-                Authorization.authorization.Close();
+                foreach (var failure in results.Errors)
+                {
+                    errorStr += "Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage + '\n';
+                }
+                MessageBox.Show(errorStr);
             }
+            else
+            {
+                
+
+                UserModel? authUser = UnitWorkContent.UserRepository.Authorization(PasswordHashing.Hash(logIn.password), logIn.email);
+
+                App.session.AuthUser = authUser;
+
+                if (authUser?.IsAdmin == true)
+                {
+                    AdminPanel adminPanel = new AdminPanel();
+                    adminPanel.Show();
+                    Authorization.authorization.Close();
+                }
+                else if (authUser?.IsAdmin == false && authUser.FirstName != null)
+                {
+                    ClientWindow clientWindow = new ClientWindow();
+                    App.session.clientWindow = clientWindow;
+                    clientWindow.Show();
+                    Authorization.authorization.Close();
+                }
+            }
+                
         }
 
         public TicketCommand SaveConfigCommand
@@ -130,24 +180,44 @@ namespace lab4_5.ViewModel
             string email = Account.account.Email.Text;
             string phoneNumber = Account.account.PhoneNumber.Text;
 
-            string oldPassword = Account.account.OldPassword.Text;
-            string newPassword = Account.account.NewPassword.Text;
-            string newPasswordDouble = Account.account.NewPasswordDouble.Text;
+            string oldPassword = Account.account.OldPassword.Password;
+            string newPassword = Account.account.NewPassword.Password;
+            string newPasswordDouble = Account.account.NewPasswordDouble.Password;
 
             AuthUser.FirstName = firstName; AuthUser.LastName = lastName;
             AuthUser.Surname = surname; AuthUser.Email = email;
             AuthUser.PhoneNumber = phoneNumber;
 
-            if (!oldPassword.IsNullOrEmpty() && !newPassword.IsNullOrEmpty() && 
-                !newPasswordDouble.IsNullOrEmpty() && newPassword.Equals(newPasswordDouble))
+            if (AuthUser.PasswordHash.Equals(PasswordHashing.Hash(oldPassword)))
             {
-                AuthUser.PasswordHash = PasswordHashing.Hash(newPassword);
+                if (!newPassword.IsNullOrEmpty() && !newPasswordDouble.IsNullOrEmpty()
+                    && newPassword.Equals(newPasswordDouble))
+                {
+                    AuthUser.PasswordHash = PasswordHashing.Hash(newPassword);
+                } else
+                {
+                    MessageBox.Show("Новый пароль должен совпадать");
+                }
+                    
             } else
             {
-                MessageBox.Show("Неверный нынешний пароль");
+                MessageBox.Show("Старый пароль неверный");
             }
 
-            UnitWorkContent.UserRepository.Update(AuthUser);
+            string errorStr = string.Empty;
+            var results = new List<ValidationResult>();
+            var context = new ValidationContext(AuthUser);
+            if (!Validator.TryValidateObject(AuthUser, context, results, true))
+            {
+                foreach (var error in results)
+                {
+                    errorStr += error.ErrorMessage + '\n';
+                }
+                MessageBox.Show(errorStr);
+            }
+            else
+
+                UnitWorkContent.UserRepository.Update(AuthUser);
 
         }
 

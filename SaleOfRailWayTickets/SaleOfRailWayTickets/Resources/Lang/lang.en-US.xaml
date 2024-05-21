@@ -20,7 +20,7 @@
 
     <v:String x:Key="m_TitleTableId">ID</v:String>
     <v:String x:Key="m_TitleTableNameWay">Route name</v:String>
-    <v:String x:Key="m_TitleTableTime">Departure-arrival time</v:String>
+    <v:String x:Key="m_TitleTableTime">Departure time</v:String>
     <v:String x:Key="m_TitleTablePrice">Price</v:String>
     <v:String x:Key="m_TitleTableNumberTrain">Train number</v:String>
     <v:String x:Key="m_TitleTableType">Type</v:String>

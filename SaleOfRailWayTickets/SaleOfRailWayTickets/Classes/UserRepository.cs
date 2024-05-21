@@ -45,11 +45,11 @@ namespace lab4_5.Classes
                 if (user?.PasswordHash != passwordHash) {
                     throw new Exception("Неверный логин или пароль");
                 }
-                context.SaveChanges();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return new UserModel();
             }
             return user;
         }
@@ -76,7 +76,7 @@ namespace lab4_5.Classes
 
         public List<UserModel> GetList()
         {
-            throw new NotImplementedException();
+            return context.UsersDbSet.ToList();
         }
 
         public void Update(UserModel item)

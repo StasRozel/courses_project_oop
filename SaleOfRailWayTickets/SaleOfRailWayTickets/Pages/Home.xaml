@@ -46,7 +46,7 @@
             <xctk:WatermarkTextBox Grid.Column="0" x:Name="SearchFrom" Watermark="Откуда" Margin="10 0 0 0" Style="{StaticResource SearchIn}"/>
             <xctk:WatermarkTextBox Grid.Column="1" x:Name="SearchWhere" Watermark="Куда" Style="{StaticResource SearchIn}"/>
             <xctk:WatermarkTextBox Grid.Column="2" x:Name="SearchTime" Watermark="Время" Style="{StaticResource SearchIn}"/>
-            <Button Grid.Column="3" x:Name="SearchBtn" Content="Поиск" Margin="0 0 17 0" Style="{StaticResource SearchBtn}"/>
+            <Button Grid.Column="3" x:Name="SearchBtn" Content="Поиск" Margin="0 0 17 0" Style="{StaticResource SearchBtn}" Command="{Binding SearchCommand}"/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>

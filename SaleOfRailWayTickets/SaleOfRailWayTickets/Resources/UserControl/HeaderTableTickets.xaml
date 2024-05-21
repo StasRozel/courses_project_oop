@@ -10,7 +10,8 @@
         <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"></ColumnDefinition>
-            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="100*"></ColumnDefinition>
             <ColumnDefinition Width="40*"></ColumnDefinition>
             <ColumnDefinition Width="50*"></ColumnDefinition>
@@ -21,23 +22,23 @@
            Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
             HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Text="{DynamicResource m_TitleTableNameWay}" FontSize="18"
-           Grid.Column="1" Grid.Row="0" TextWrapping="Wrap"
+           Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" TextWrapping="Wrap"
            Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
             HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBlock Text="{DynamicResource m_TitleTableTime}" FontSize="18"
-           Grid.Column="2" Grid.Row="0" TextWrapping="Wrap"
-           Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
-            HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="{DynamicResource m_TitleTablePrice}" FontSize="18"
            Grid.Column="3" Grid.Row="0" TextWrapping="Wrap"
            Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
             HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="{DynamicResource m_TitleTableNumberTrain}" FontSize="18"
+        <TextBlock Text="{DynamicResource m_TitleTablePrice}" FontSize="18"
            Grid.Column="4" Grid.Row="0" TextWrapping="Wrap"
            Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
             HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="{DynamicResource m_TitleTableType}" FontSize="18"
+        <TextBlock Text="{DynamicResource m_TitleTableNumberTrain}" FontSize="18"
            Grid.Column="5" Grid.Row="0" TextWrapping="Wrap"
+           Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="{DynamicResource m_TitleTableType}" FontSize="18"
+           Grid.Column="6" Grid.Row="0" TextWrapping="Wrap"
            Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
             HorizontalAlignment="Center" VerticalAlignment="Center"/>
 

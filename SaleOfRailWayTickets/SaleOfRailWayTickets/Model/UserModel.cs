@@ -11,6 +11,7 @@ namespace lab4_5
 {
     public class UserModel : INotifyPropertyChanged
     {
+        
         private string? firstName;
         private string? lastName;
         private string? surname;
@@ -19,26 +20,34 @@ namespace lab4_5
         private string? phoneNumber;
         private bool isAdmin;
 
+        [Required(ErrorMessage = "Имя обязательно для заполнения")]
+        [Length(2, 20, ErrorMessage = "Имя должно быть от 2 до 20 символов")]
+        [RegularExpression(@"^[a-zA-ZА-Яа-я]+$", ErrorMessage = "Имя состоит только из букв")]
         public string? FirstName
         {
             get { return firstName; }
-            set 
-            { 
+            set
+            {
                 firstName = value;
                 OnPropertyChanged("FirstName");
             }
         }
 
+        [Required(ErrorMessage = "Фамилия обязательна для заполнения")]
+        [Length(2, 40, ErrorMessage = "Фамилия должна быть от 2 до 40 символов")]
+        [RegularExpression(@"^[a-zA-ZА-Яа-я]+$", ErrorMessage = "Фамилия состоит только из букв")]
         public string? LastName
         {
             get { return lastName; }
-            set 
-            { 
+            set
+            {
                 lastName = value;
                 OnPropertyChanged("LastName");
             }
         }
 
+        [Length(0, 20, ErrorMessage = "Отчество должно быть до 20 символов")]
+        [RegularExpression(@"^[a-zA-ZА-Яа-я]+$", ErrorMessage = "Отчество состоит только из букв")]
         public string? Surname
         {
             get { return surname; }
@@ -52,33 +61,37 @@ namespace lab4_5
         public string? PasswordHash
         {
             get { return passwordHash; }
-            set 
-            { 
+            set
+            {
                 passwordHash = value;
                 OnPropertyChanged("PasswordHash");
             }
         }
 
         [Key]
+        [Required(ErrorMessage = "Электронная почта обязательна для заполнения")]
+        [EmailAddress(ErrorMessage = "Введите корректный адрес электронной почты")]
         public string? Email
         {
             get { return email; }
-            set 
-            { 
-                email = value; 
+            set
+            {
+                email = value;
                 OnPropertyChanged("Email");
             }
-        }       
+        }
 
+        //[Phone(ErrorMessage = "Введите корректный номер телефона")]
         public string? PhoneNumber
         {
             get { return phoneNumber; }
-            set 
-            { 
+            set
+            {
                 phoneNumber = value;
                 OnPropertyChanged("PhoneNumber");
             }
         }
+
 
         public bool IsAdmin
         {
